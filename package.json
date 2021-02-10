@@ -2,11 +2,11 @@
   "name": "aarons-projects",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "node index.js"
+    "start": "node bundle.js"
   },
   "keywords": [],
   "author": "",
