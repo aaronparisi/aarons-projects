@@ -6,8 +6,9 @@
   },
   "main": "bundle.js",
   "scripts": {
-    "start": "node server.js",
-    "heroku-postbuild": "webpack"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "node bundle.js"
   },
   "keywords": [],
   "author": "",
