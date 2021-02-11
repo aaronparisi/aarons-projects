@@ -10,7 +10,7 @@ const Content = () => {
       <div className="project-links">
         <ProjectLink projTitle="Towers of Hanoi" imageUrl="./thumbnails/Towers.png"/>
         <ProjectLink projTitle="Todos" imageUrl="./thumbnails/Todos.png"/>
-        <ProjectLink projTitle="TicTacToe" imageUrl="./thumbnails/TicTacToe.png"/>
+        <ProjectLink projTitle="TicTacToe" imageUrl="./thumbnails/tictactoe.png"/>
       </div>
     </div>
   )
