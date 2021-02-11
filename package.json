@@ -1,7 +1,6 @@
 {
   "name": "aarons-projects",
   "version": "1.0.0",
-  "description": "",
   "main": "bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,7 +17,18 @@
     "babel-loader": "^8.2.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "webpack": "^5.20.1",
     "webpack-cli": "^4.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronparisi/aarons-projects.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aaronparisi/aarons-projects/issues"
+  },
+  "homepage": "https://github.com/aaronparisi/aarons-projects#readme",
+  "description": "",
+  "devDependencies": {
+    "webpack": "^5.21.2"
   }
 }
