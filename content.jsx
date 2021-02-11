@@ -8,9 +8,9 @@ const Content = () => {
     <div>
       <NavBar />
       <div className="project-links">
-        <ProjectLink projTitle="Towers of Hanoi"/>
-        <ProjectLink projTitle="Todos"/>
-        <ProjectLink projTitle="TicTacToe"/>
+        <ProjectLink projTitle="Towers of Hanoi" imageUrl="./thumbnails/towersOfHanoi.png"/>
+        <ProjectLink projTitle="Todos" imageUrl="./thumbnails/Todos.png"/>
+        <ProjectLink projTitle="TicTacToe" imageUrl="./thumbnails/tictactoe.png"/>
       </div>
     </div>
   )
