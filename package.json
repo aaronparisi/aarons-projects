@@ -7,9 +7,8 @@
   "main": "bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "start": "node bundle.js",
-    "heroku-postbuild": "node_modules/.bin/webpack --mode production --config ./webpack.prod.config.js --progress"
+    "build": "webpack --mode=production",
+    "start": "node bundle.js"
   },
   "keywords": [],
   "author": "",
