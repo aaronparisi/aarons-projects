@@ -14,8 +14,10 @@ nav {
 
 .project-link {
   border: 1px solid black;
+  width: 30%;
+  margin: 10px;
 }
 
 .project-thumbnail {
-  height: 200px;
+  
 }
