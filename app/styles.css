@@ -1,0 +1,21 @@
+html, body {
+
+}
+
+nav {
+  border: 1px solid black;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+}
+
+.project-link {
+  border: 1px solid black;
+}
+
+.project-thumbnail {
+  height: 200px;
+}
