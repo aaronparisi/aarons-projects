@@ -7,7 +7,7 @@ const Content = () => {
   return (
     <div>
       <NavBar />
-      <div className="project-link">
+      <div className="project-links">
         <ProjectLink projTitle="Towers of Hanoi"/>
         <ProjectLink projTitle="Todos"/>
         <ProjectLink projTitle="TicTacToe"/>
