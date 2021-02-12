@@ -1,9 +1,11 @@
 import React from 'react'
 
+import Logo from './Logo'
+
 const NavBar = () => {
   return (
     <nav>
-      <h1>navBar</h1>
+      <Logo />
     </nav>
   )
 }
