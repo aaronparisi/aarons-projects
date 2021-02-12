@@ -8,7 +8,7 @@ html, body {
 
 h1, h2 {
   font-family: 'Prompt', sans-serif;
-  color: #ffffff; }
+  color: #dddddd; }
 
 h1 {
   font-size: 48px; }
@@ -28,7 +28,18 @@ p {
 nav {
   width: 100%;
   position: sticky;
-  top: 0px; }
+  top: 0px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10px;
+  background-color: #0f292f;
+  z-index: 2;
+  border-bottom: 1px solid #cb2d6f; }
+
+.navlinks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
 
 .hex {
   margin: 35px 0px;
@@ -94,12 +105,13 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%; }
+  width: 100%;
+  margin-top: 40px; }
 
 .project-display {
   width: 900px;
   height: 400px;
-  margin: 10px;
+  margin-bottom: 100px;
   display: flex; }
 
 .project-display:nth-child(2n+1) {
@@ -111,20 +123,36 @@ nav {
   text-align: right; }
 
 .project-thumbnail {
-  filter: sepia() saturate(100%) brightness(75%) hue-rotate(140deg); }
+  filter: sepia() saturate(100%) brightness(65%) hue-rotate(140deg);
+  width: 1000px; }
 
 .project-thumbnail:hover {
   filter: none; }
 
 img {
-  height: 400px; }
+  height: 400px;
+  width: 1000px;
+  border-radius: 5px; }
 
 .project-info {
   color: #cccccc;
-  width: 500px; }
+  width: 300px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px; }
 
-.project-details-text {
-  width: 50%; }
+.project-title {
+  margin: 0px 10px; }
+
+.project-details {
+  background-color: #13373f;
+  padding: 20px;
+  width: 500px;
+  overflow: visible;
+  z-index: 1;
+  border-radius: 5px; }
 
 .project-display:nth-child(2n+1) .project-details {
   flex-direction: column;
@@ -135,19 +163,32 @@ img {
   align-items: flex-start; }
 
 .project-display:nth-child(2n+1) .techs {
-  text-align: center; }
+  text-align: left; }
 
 .project-display:nth-child(2n) .techs {
-  text-align: center; }
-
-.project-details {
-  background-color: #13373f; }
+  text-align: right; }
 
 .techs {
-  display: flex;
-  flex-direction: row;
-  color: #aaaaaa;
-  list-style: circle;
-  list-style-position: inside; }
+  margin-top: 10px;
+  color: #aaaaaa; }
+
+.product-links {
+  margin-top: 10px; }
+
+.project-display:nth-child(2n+1) .product-links {
+  align-self: flex-end; }
+
+.project-display:nth-child(2n) .product-links {
+  align-self: flex-start; }
+
+.link-icon {
+  height: 20px;
+  width: 20px;
+  filter: invert(100%);
+  margin-right: 10px; }
+
+.navlink-icon {
+  height: 40px;
+  width: 40px; }
 
 /*# sourceMappingURL=style.css.map */
