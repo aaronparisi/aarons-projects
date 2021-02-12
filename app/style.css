@@ -6,8 +6,24 @@ html, body {
   flex-direction: column;
   align-items: center; }
 
+h1, h2 {
+  font-family: 'Prompt', sans-serif;
+  color: #ffffff; }
+
 h1 {
-  font-family: 'Archivo Black', sans-serif; }
+  font-size: 48px; }
+
+h2 {
+  font-size: 36px; }
+
+p {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 16px;
+  color: #cccccc; }
+
+.techs {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 12px; }
 
 nav {
   width: 100%;
@@ -68,7 +84,7 @@ nav {
 .logo a {
   text-decoration: none;
   color: #14a098;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   font-size: 30px; }
 
 .logo a:hover {
@@ -81,17 +97,18 @@ nav {
   width: 100%; }
 
 .project-display {
-  width: 500px;
-  height: 300px;
+  width: 900px;
+  height: 400px;
   margin: 10px;
-  display: flex;
-  border: 1px solid white; }
+  display: flex; }
 
 .project-display:nth-child(2n+1) {
-  flex-direction: row; }
+  flex-direction: row;
+  text-align: left; }
 
 .project-display:nth-child(2n) {
-  flex-direction: row-reverse; }
+  flex-direction: row-reverse;
+  text-align: right; }
 
 .project-thumbnail {
   filter: sepia() saturate(100%) brightness(75%) hue-rotate(140deg); }
@@ -100,10 +117,37 @@ nav {
   filter: none; }
 
 img {
-  height: 300px; }
+  height: 400px; }
 
 .project-info {
   color: #cccccc;
-  background-color: #723356; }
+  width: 500px; }
+
+.project-details-text {
+  width: 50%; }
+
+.project-display:nth-child(2n+1) .project-details {
+  flex-direction: column;
+  align-items: flex-end; }
+
+.project-display:nth-child(2n) .project-details {
+  flex-direction: column;
+  align-items: flex-start; }
+
+.project-display:nth-child(2n+1) .techs {
+  text-align: center; }
+
+.project-display:nth-child(2n) .techs {
+  text-align: center; }
+
+.project-details {
+  background-color: #13373f; }
+
+.techs {
+  display: flex;
+  flex-direction: row;
+  color: #aaaaaa;
+  list-style: circle;
+  list-style-position: inside; }
 
 /*# sourceMappingURL=style.css.map */
