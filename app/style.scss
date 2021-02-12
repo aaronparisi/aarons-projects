@@ -1,9 +1,13 @@
 $dark-green: #0f292f;
 $light-green: #14a098;
+$bright-green: #13dfd4;
 $white: #cccccc;
 $bright-white: #ffffff;
 $pink: #cb2d6f;
-$purple: #501f3a;
+$purple: #723356;
+
+$project-display-height: 300px;
+$project-display-width: 500px;
 
 html, body {
   background-color: $dark-green;
@@ -21,6 +25,8 @@ h1 {
 
 nav {
   width: 100%;
+  position: sticky;
+  top: 0px;
 }
 
 .hex {
@@ -32,7 +38,7 @@ nav {
 }
 
 .hex:hover {
-  background-color: lighten($color: $light-green, $amount: 20%);
+  background-color: $bright-green;
 }
 
 .hex:before, .hex:after {
@@ -47,7 +53,7 @@ nav {
   border-bottom: 15px solid $light-green;
 }
 .hex:hover:before {
-  border-bottom: 15px solid lighten($color: $light-green, $amount: 20%);
+  border-bottom: 15px solid $bright-green;
 }
 
 .hex:after {
@@ -56,7 +62,7 @@ nav {
 }
 
 .hex:hover:after {
-  border-top: 15px solid lighten($color: $light-green, $amount: 20%);
+  border-top: 15px solid $bright-green;
 }
 
 .hex.inner {
@@ -92,27 +98,45 @@ nav {
 }
 
 .logo a:hover {
-  color: lighten($color: $light-green, $amount: 20%);
+  color: $bright-green;
 }
 
-.project-links {
+.project-displays {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 75%;
-}
-
-.project-link {
-
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  margin: 10px;
-  filter: sepia() saturate(100%) brightness(75%) hue-rotate(140deg);
 }
 
-.project-link:hover {
-  filter: none;
+.project-display {
+  width: $project-display-width;
+  height: $project-display-height;
+  margin: 10px;
+  display: flex;
+  border: 1px solid white;
+}
+
+.project-display:nth-child(2n+1) {
+  flex-direction: row;
+}
+
+.project-display:nth-child(2n) {
+  flex-direction: row-reverse;
 }
 
 .project-thumbnail {
-  
+  filter: sepia() saturate(100%) brightness(75%) hue-rotate(140deg);
+}
+
+.project-thumbnail:hover {
+  filter: none;
+}
+
+img {
+  height: $project-display-height;
+}
+
+.project-info {
+  color: $white;
+  background-color: $purple;
 }

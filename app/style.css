@@ -10,7 +10,9 @@ h1 {
   font-family: 'Archivo Black', sans-serif; }
 
 nav {
-  width: 100%; }
+  width: 100%;
+  position: sticky;
+  top: 0px; }
 
 .hex {
   margin: 35px 0px;
@@ -20,7 +22,7 @@ nav {
   position: relative; }
 
 .hex:hover {
-  background-color: #34e6dc; }
+  background-color: #13dfd4; }
 
 .hex:before, .hex:after {
   content: "";
@@ -33,14 +35,14 @@ nav {
   border-bottom: 15px solid #14a098; }
 
 .hex:hover:before {
-  border-bottom: 15px solid #34e6dc; }
+  border-bottom: 15px solid #13dfd4; }
 
 .hex:after {
   bottom: -15px;
   border-top: 15px solid #14a098; }
 
 .hex:hover:after {
-  border-top: 15px solid #34e6dc; }
+  border-top: 15px solid #13dfd4; }
 
 .hex.inner {
   background-color: #0f292f;
@@ -70,20 +72,38 @@ nav {
   font-size: 30px; }
 
 .logo a:hover {
-  color: #34e6dc; }
+  color: #13dfd4; }
 
-.project-links {
+.project-displays {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 75%; }
+  flex-direction: column;
+  align-items: center;
+  width: 100%; }
 
-.project-link {
-  width: 100%;
+.project-display {
+  width: 500px;
+  height: 300px;
   margin: 10px;
+  display: flex;
+  border: 1px solid white; }
+
+.project-display:nth-child(2n+1) {
+  flex-direction: row; }
+
+.project-display:nth-child(2n) {
+  flex-direction: row-reverse; }
+
+.project-thumbnail {
   filter: sepia() saturate(100%) brightness(75%) hue-rotate(140deg); }
 
-.project-link:hover {
+.project-thumbnail:hover {
   filter: none; }
+
+img {
+  height: 300px; }
+
+.project-info {
+  color: #cccccc;
+  background-color: #723356; }
 
 /*# sourceMappingURL=style.css.map */
