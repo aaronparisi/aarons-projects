@@ -147,7 +147,7 @@ nav {
 }
 
 .bio {
-  margin-top: 25px;
+  margin-top: 100px;
   width: 900px;
 
   h1 {
@@ -158,7 +158,6 @@ nav {
   h2 {
     color: $dull-white;
     font-size: 78px;
-    line-height: 1.1;
   }
 
   h3 {
@@ -170,7 +169,7 @@ nav {
   h4 {
     color: $light-green;
     font-family: 'Source Code Pro', monospace;
-    font-size: 30px;
+    font-size: 24px;
   }
 
   #blurb {
@@ -199,8 +198,8 @@ nav {
     border: 1px solid $light-green;
     background-color: $dark-green;
     padding: 0px;
-    margin-top: 20px;
     border-radius: 10px;
+    margin-top: 20px;
   }
   
   #email-button:hover {
@@ -222,7 +221,7 @@ nav {
   }
 
   #about {
-    margin-top: 100px;
+    margin-top: 300px;
     margin-bottom: 100px;
   }
 
@@ -374,4 +373,13 @@ nav {
 .navlink-icon {
   height: 40px;
   width: 40px;
+}
+
+.footer {
+  margin-bottom: 10px;
+  margin-top: 100px;
+  a {
+    text-decoration: none;
+    color: $light-green;
+  }
 }

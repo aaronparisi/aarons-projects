@@ -103,15 +103,14 @@ nav {
   color: #13dfd4; }
 
 .bio {
-  margin-top: 25px;
+  margin-top: 100px;
   width: 900px; }
   .bio h1 {
     color: #dddddd;
     font-size: 78px; }
   .bio h2 {
     color: #999999;
-    font-size: 78px;
-    line-height: 1.1; }
+    font-size: 78px; }
   .bio h3 {
     color: #dddddd;
     font-size: 48px;
@@ -119,7 +118,7 @@ nav {
   .bio h4 {
     color: #14a098;
     font-family: 'Source Code Pro', monospace;
-    font-size: 30px; }
+    font-size: 24px; }
   .bio #blurb {
     width: 50%;
     color: #dddddd; }
@@ -129,8 +128,8 @@ nav {
     border: 1px solid #14a098;
     background-color: #0f292f;
     padding: 0px;
-    margin-top: 20px;
-    border-radius: 10px; }
+    border-radius: 10px;
+    margin-top: 20px; }
   .bio #email-button:hover {
     border-color: #13dfd4; }
   .bio #email-button a:hover {
@@ -142,7 +141,7 @@ nav {
     padding: 10px 20px;
     font-size: 30px; }
   .bio #about {
-    margin-top: 100px;
+    margin-top: 300px;
     margin-bottom: 100px; }
   .bio #about-content {
     display: flex; }
@@ -257,5 +256,12 @@ nav {
 .navlink-icon {
   height: 40px;
   width: 40px; }
+
+.footer {
+  margin-bottom: 10px;
+  margin-top: 100px; }
+  .footer a {
+    text-decoration: none;
+    color: #14a098; }
 
 /*# sourceMappingURL=style.css.map */

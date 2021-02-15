@@ -28,8 +28,8 @@ const Bio = () => {
             After five years of tinkering with programming here and there, I was working
             a job at a <a href="https://www.1031services.com/">1031 exchange company</a>.
             I was able to use <a href="https://support.microsoft.com/en-us/office/quick-start-create-a-macro-741130ca-080d-49f5-9471-1e5fb3d581a8">Excel Macros</a> and <a href="https://www.autohotkey.com/">AutoHotkey</a> to automate and streamline a few things, but I wasn't able to actually change the software we were using.
-            I realized making software more intuitive and user-friendly was a passion.  Thanks to App Academy's free, online curriculum, <a href="https://open.appacademy.io/">App Academy Open</a>,
-            I've been able to really dig in and manifest that passion.  Take a look at some of the projects I've made below!
+            I realized making software more intuitive and user-friendly was a passion.  With the help of <a href="https://open.appacademy.io/">App Academy Open</a>,
+            I've been able to teach myself the skills to do that.
           </p>
           <div id="headshot-container"><img id="headshot" src="./misc_images/headshot.png" alt="Headshot of Aaron Parisi"/></div>
         </div>

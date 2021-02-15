@@ -3,6 +3,7 @@ import React from 'react'
 import NavBar from './components/NavBar'
 import Bio from './components/Bio'
 import ProjectDisplay from './components/ProjectDisplay'
+import Footer from './components/Footer'
 
 const Content = () => {
   return (
@@ -37,6 +38,8 @@ const Content = () => {
           techs={["Ruby", "JavaScript"]}
         />
       </div>
+
+      <Footer />
     </div>
   )
 }
