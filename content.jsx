@@ -9,6 +9,8 @@ const Content = () => {
     <div className="content">
       <NavBar />
       <Bio />
+
+      <h1 id="projects-header">My Projects</h1>
       <div className="project-displays">
         <ProjectDisplay
           projTitle="Towers of Hanoi"

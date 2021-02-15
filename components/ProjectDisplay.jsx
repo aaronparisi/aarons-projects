@@ -4,7 +4,7 @@ const ProjectDisplay = ({ projTitle, imageUrl, pageUrl, gitUrl, description, tec
   return (
     <div className="project-display">
       <div className="project-thumbnail">
-        <img src={imageUrl} alt={`web app thumbnail for ${projTitle}`}/>
+        <img className="thumbnail-image" src={imageUrl} alt={`web app thumbnail for ${projTitle}`}/>
       </div>
       
       <div className="project-info">

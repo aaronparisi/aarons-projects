@@ -7,11 +7,11 @@ html, body {
   align-items: center; }
 
 h1, h2 {
-  font-family: 'Prompt', sans-serif;
+  font-family: "Rajdhani", sans-serif;
   color: #dddddd; }
 
 h1 {
-  font-size: 48px; }
+  font-size: 76px; }
 
 h2 {
   font-size: 36px; }
@@ -38,8 +38,9 @@ nav {
 
 .navlinks {
   display: flex;
-  flex-direction: column;
-  justify-content: center; }
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; }
 
 .hex {
   margin: 35px 0px;
@@ -90,7 +91,7 @@ nav {
 
 .logo {
   width: min-content;
-  margin: 10px; }
+  margin: 0px 10px; }
 
 .logo a {
   text-decoration: none;
@@ -112,24 +113,22 @@ nav {
     font-size: 48px;
     line-height: 1.1; }
   .bio h3 {
+    color: #dddddd;
+    font-size: 48px;
+    font-family: "Rajdhani"; }
+  .bio h4 {
     color: #14a098;
-    font-family: 'Source Code Pro', monospace; }
-  .bio #pretty {
-    font-family: 'Great Vibes', cursive;
-    color: #cb2d6f; }
-  .bio #easy {
-    font-family: 'Rock Salt', cursive;
-    color: #e0d423; }
-  .bio #function {
     font-family: 'Source Code Pro', monospace;
-    color: #13dfd4; }
+    font-size: 30px; }
+  .bio #blurb {
+    width: 50%; }
   .bio #email-button {
     font-size: 48px;
-    font-family: 'Prompt', sans-serif;
+    font-family: "Rajdhani", sans-serif;
     border: 1px solid #14a098;
     background-color: #0f292f;
     padding: 0px;
-    margin-top: 10px;
+    margin-top: 20px;
     border-radius: 10px; }
   .bio #email-button:hover {
     border-color: #13dfd4; }
@@ -140,12 +139,31 @@ nav {
     width: 100%;
     height: 100%;
     padding: 10px 20px;
-    font-size: 36px; }
+    font-size: 30px; }
+  .bio #about {
+    margin-top: 100px;
+    margin-bottom: 100px; }
+  .bio #about-content {
+    display: flex; }
+  .bio #about-paragraph {
+    width: 600px; }
+  .bio #headshot-container {
+    margin-left: 30px;
+    height: 250px;
+    width: 250px;
+    overflow: hidden;
+    border-radius: 20px; }
+  .bio #headshot {
+    margin: -40px 0px 0px 0px; }
   .bio p {
     font-size: 18px; }
   .bio a {
     color: #14a098;
     text-decoration: none; }
+
+#projects-header {
+  align-self: flex-start;
+  margin-left: 184px; }
 
 .project-displays {
   display: flex;
@@ -174,7 +192,7 @@ nav {
 .project-thumbnail:hover {
   filter: none; }
 
-img {
+.thumbnail-image {
   height: 400px;
   width: 1000px;
   border-radius: 5px; }
