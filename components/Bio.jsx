@@ -4,17 +4,17 @@ const Bio = () => {
   return (
     <div className="bio">
       <h4>Hi, my name is</h4>
-      <h1>Aaron Parisi</h1>
-      <h2>I like to make websites <br/>
+      <h1>Aaron Parisi.</h1>
+      <h2>I like to make websites.<br/>
         {/* <span id="pretty">look pretty</span>,<br/>
         <span id="easy">feel easy</span>, & <br/>
         <span id="function">function well</span>. */}
       </h2>
-      <p id="blurb">I am a web developer based in Seattle, WA with a passion for making websites that look beautiful, feel easy, and function well.  
-      I want to help build wep applications that people look forward to using.</p>
+      <p id="blurb">I am a web developer based in Seattle, WA, with a passion for making websites that look beautiful, feel easy, and function well.  
+      I want to help build wep applications that people actually look forward to using.</p>
 
       <button id="email-button">
-        <a href="mailto: parisi.aaron@gmail.com">Get in touch</a>
+        <a href="mailto: parisi.aaron@gmail.com">Get in Touch</a>
       </button>
 
       <div id="about">

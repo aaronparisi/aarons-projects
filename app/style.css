@@ -109,8 +109,8 @@ nav {
     color: #dddddd;
     font-size: 78px; }
   .bio h2 {
-    color: #aaaaaa;
-    font-size: 48px;
+    color: #999999;
+    font-size: 78px;
     line-height: 1.1; }
   .bio h3 {
     color: #dddddd;
@@ -121,10 +121,11 @@ nav {
     font-family: 'Source Code Pro', monospace;
     font-size: 30px; }
   .bio #blurb {
-    width: 50%; }
+    width: 50%;
+    color: #dddddd; }
   .bio #email-button {
     font-size: 48px;
-    font-family: "Rajdhani", sans-serif;
+    font-family: "Source Code Pro", monospace;
     border: 1px solid #14a098;
     background-color: #0f292f;
     padding: 0px;
@@ -233,7 +234,7 @@ nav {
 
 .techs {
   margin-top: 10px;
-  color: #aaaaaa; }
+  color: #999999; }
 
 .product-links {
   margin-top: 10px; }

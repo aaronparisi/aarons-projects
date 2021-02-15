@@ -3,7 +3,7 @@ $med-green: #13373f;
 $light-green: #14a098;
 $bright-green: #13dfd4;
 
-$dull-white: #aaaaaa;
+$dull-white: #999999;
 $white: #cccccc;
 $bright-white: #dddddd;
 
@@ -157,7 +157,7 @@ nav {
 
   h2 {
     color: $dull-white;
-    font-size: 48px;
+    font-size: 78px;
     line-height: 1.1;
   }
 
@@ -175,6 +175,7 @@ nav {
 
   #blurb {
     width: 50%;
+    color: $bright-white;
   }
 
   // #pretty {
@@ -194,7 +195,7 @@ nav {
 
   #email-button {
     font-size: 48px;
-    font-family: $big-font, sans-serif;
+    font-family: $code-font, monospace;
     border: 1px solid $light-green;
     background-color: $dark-green;
     padding: 0px;
