@@ -10,6 +10,8 @@ $bright-white: #dddddd;
 $pink: #cb2d6f;
 $purple: #723356;
 
+$yellow: #e0d423;
+
 $project-display-height: 400px;
 $project-display-width: 900px;
 
@@ -138,6 +140,79 @@ nav {
   color: $bright-green;
 }
 
+.bio {
+  margin-top: 25px;
+  width: 900px;
+
+  h1 {
+    color: $bright-white;
+    font-size: 78px;
+  }
+
+  h2 {
+    color: $dull-white;
+    font-size: 48px;
+    line-height: 1.1;
+  }
+
+  h3 {
+    color: $light-green;
+    font-family: 'Source Code Pro', monospace;
+  }
+
+  #pretty {
+    font-family: 'Great Vibes', cursive;
+    color: $pink;
+  }
+
+  #easy {
+    font-family: 'Rock Salt', cursive;
+    color: $yellow;
+  }
+
+  #function {
+    font-family: 'Source Code Pro', monospace;
+    color: $bright-green;
+  }
+
+  #email-button {
+    font-size: 48px;
+    font-family: 'Prompt', sans-serif;
+    border: 1px solid $light-green;
+    background-color: $dark-green;
+    padding: 0px;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+  
+  #email-button:hover {
+    border-color: $bright-green;
+  }
+
+  #email-button a:hover {
+    color: $bright-green;
+  }
+
+  #email-button a {
+    display: inline-block;
+    // width: 320px;
+    // height: 70px;
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+    font-size: 36px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  a {
+    color: $light-green;
+    text-decoration: none;
+  }
+}
+
 .project-displays {
   display: flex;
   flex-direction: column;
@@ -164,7 +239,7 @@ nav {
 }
 
 .project-thumbnail {
-  filter: sepia() saturate(100%) brightness(65%) hue-rotate(140deg);
+  // filter: sepia() saturate(100%) brightness(65%) hue-rotate(140deg);
   width: 1000px;
 }
 

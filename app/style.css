@@ -101,6 +101,52 @@ nav {
 .logo a:hover {
   color: #13dfd4; }
 
+.bio {
+  margin-top: 25px;
+  width: 900px; }
+  .bio h1 {
+    color: #dddddd;
+    font-size: 78px; }
+  .bio h2 {
+    color: #aaaaaa;
+    font-size: 48px;
+    line-height: 1.1; }
+  .bio h3 {
+    color: #14a098;
+    font-family: 'Source Code Pro', monospace; }
+  .bio #pretty {
+    font-family: 'Great Vibes', cursive;
+    color: #cb2d6f; }
+  .bio #easy {
+    font-family: 'Rock Salt', cursive;
+    color: #e0d423; }
+  .bio #function {
+    font-family: 'Source Code Pro', monospace;
+    color: #13dfd4; }
+  .bio #email-button {
+    font-size: 48px;
+    font-family: 'Prompt', sans-serif;
+    border: 1px solid #14a098;
+    background-color: #0f292f;
+    padding: 0px;
+    margin-top: 10px;
+    border-radius: 10px; }
+  .bio #email-button:hover {
+    border-color: #13dfd4; }
+  .bio #email-button a:hover {
+    color: #13dfd4; }
+  .bio #email-button a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+    font-size: 36px; }
+  .bio p {
+    font-size: 18px; }
+  .bio a {
+    color: #14a098;
+    text-decoration: none; }
+
 .project-displays {
   display: flex;
   flex-direction: column;
@@ -123,7 +169,6 @@ nav {
   text-align: right; }
 
 .project-thumbnail {
-  filter: sepia() saturate(100%) brightness(65%) hue-rotate(140deg);
   width: 1000px; }
 
 .project-thumbnail:hover {

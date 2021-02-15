@@ -1,12 +1,14 @@
 import React from 'react'
 
 import NavBar from './components/NavBar'
+import Bio from './components/Bio'
 import ProjectDisplay from './components/ProjectDisplay'
 
 const Content = () => {
   return (
     <div className="content">
       <NavBar />
+      <Bio />
       <div className="project-displays">
         <ProjectDisplay
           projTitle="Towers of Hanoi"
