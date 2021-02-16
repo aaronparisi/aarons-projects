@@ -3,7 +3,7 @@ import React from 'react'
 const Bio = () => {
   return (
     <div id="bio">
-      <h4 id="greeting">Hi, my name is</h4>
+      <h4 id="greeting">Hi, my name is<span className="blinking-cursor">&#9646;</span></h4>
       <h1>Aaron Parisi.</h1>
       <h2>I like to make websites.<br/>
         {/* <span id="pretty">look pretty</span>,<br/>
