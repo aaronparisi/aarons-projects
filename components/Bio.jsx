@@ -18,7 +18,7 @@ const Bio = () => {
       </button>
 
       <div id="about">
-        <h3>About me:</h3>
+        <h3 id="about-header">About me:</h3>
         <div id="about-content">
           <p id="about-paragraph">
             After graduating with a degree in mathematics from <a href="https://www.hartwick.edu/">Hartwick College</a> with degrees in Mathematics and Economics in 2014,

@@ -19,7 +19,7 @@ function drawPath(svg, path, startX, startY, endX, endY, pathLeft) {
   // var delta  =  deltaY < absolute(deltaX) ? deltaY : absolute(deltaX);
   var delta = 20;  // ? idk what I want this to be
 
-  let farRight = $(window).innerWidth() - 100;
+  let farRight = $(window).innerWidth() - 50;
   let farLeft = 0;
 
   // ! A rx ry x-axis-rotation large-arc-flag sweep-flag x y
@@ -29,10 +29,10 @@ function drawPath(svg, path, startX, startY, endX, endY, pathLeft) {
     // go down, left to far left, down, then right, ending on the center of the left edge of the ending element
     path.attr(
       "d",  "M"  + startX + " " + startY
-      + " v" + delta                                                                      // move down
-      + " a" + delta + " " +  delta + " 0 0 " + 1 + " " + (-delta) + " " + (delta)        // arc down left
-      + " H" + (farLeft + delta)                                                          // move left
-      + " a" + delta + " " +  delta + " 0 0 " + 0 + " " + (-delta) + " " + (delta)        // arc down
+      // + " v" + delta                                                                      // move down
+      // + " a" + delta + " " +  delta + " 0 0 " + 1 + " " + (-delta) + " " + (delta)        // arc down left
+      // + " H" + (farLeft + delta)                                                          // move left
+      // + " a" + delta + " " +  delta + " 0 0 " + 0 + " " + (-delta) + " " + (delta)        // arc down
       + " V" + (endY - delta)                                                             // move down
       + " a" + delta + " " +  delta + " 0 0 " + 0 + " " + delta + " " + delta             // arc right
       + " H" + endX                                                                       // move right to end
@@ -53,7 +53,6 @@ function drawPath(svg, path, startX, startY, endX, endY, pathLeft) {
 }
 
 function connectElements(svg, path, startElem, endElem) {
-  var svgId = svg[0].id.slice(-1)
   var svgContainer= $("#svgContainer");
 
   // if first element is lower than the second, swap!
@@ -72,19 +71,20 @@ function connectElements(svg, path, startElem, endElem) {
   var endCoord   = endElem.offset();
 
   // calculate path's start (x,y)  coords
-  var startX = startCoord.left + 0.5*startElem.outerWidth() - svgLeft + 200;
-  var startY = startCoord.top  + startElem.outerHeight() - svgTop;
+  var startX = startCoord.left + 0.5*startElem.outerWidth();
+  var startY = startCoord.top  + startElem.outerHeight();
 
       // calculate path's end (x,y) coords  
       // default is middle of right edge
-  let endX = endCoord.left + endElem.outerWidth()
-  let endY = endCoord.top + 100;
+  let endX = endCoord.left + endElem.outerWidth() + 10
+  let endY = endCoord.top + 0.5*endElem.outerHeight()
+
   let pathLeft = (path[0].className.baseVal === "pathLeft")
   
   if (pathLeft) {
     // end at middle of left edge
-    endX = endCoord.left - svgLeft - svgTop
-    endY = endCoord.top + endElem.outerHeight();
+    endX = endCoord.left - 10
+    endY = endCoord.top + .5*endElem.outerHeight() 
   }
 
   // call function for drawing the path
@@ -102,7 +102,7 @@ function connectAll() {
   // connectElements($("#svg1"), $("#path4"), $("#red"),    $("#aqua")  ); 
   // connectElements($("#svg1"), $("#path5"), $("#purple"), $("#teal")  );
   // connectElements($("#svg1"), $("#path6"), $("#orange"), $("#green") );
-  connectElements($("#svg1"), $("#path1"), $("#logo"), $("#projects-header"))
+  connectElements($("#svg1"), $("#path1"), $("#logo"), $("#about-header"))
   connectElements($("#svg1"), $("#path2"), $("#logo"), $("#projects-header"))
 
 }
