@@ -7,6 +7,11 @@ const NavBar = () => {
     <nav>
       <Logo />
 
+      <div className="page-links">
+        <a href="#about">About.</a>
+        <a href="#projects-header">Projects.</a>
+      </div>
+
       <div className="navlinks">
         <a href="https://github.com/aaronparisi" target="_blank"><img className="navlink-icon link-icon" src="./icons/github.png" alt="github icon"/></a>
         <a href="https://www.linkedin.com/in/aaron-parisi/" target="_blank"><img className="navlink-icon link-icon" src="./icons/linkedin.png" alt="linkedin icon"/></a>

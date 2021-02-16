@@ -10,9 +10,9 @@ const Content = () => {
     <div className="content">
       <NavBar />
       <Bio />
-
+      
       <h1 id="projects-header">My Projects</h1>
-      <div className="project-displays">
+      <div id="project-displays">
         <ProjectDisplay
           projTitle="Towers of Hanoi"
           imageUrl="./thumbnails/Towers.png"
@@ -24,7 +24,7 @@ const Content = () => {
         <ProjectDisplay
           projTitle="Todos"
           imageUrl="./thumbnails/Todos.png"
-          pageUrl=""
+          pageUrl={null}
           gitUrl="https://github.com/aaronparisi/Todo-List-Rails-React-Redux"
           description="Overwhelmed by your galactic conquests? Keep track of your tasks with this easy-to-use todo list featuring task-reordering and color-coded completion. It is your destiny."
           techs={["Rails", "React", "Redux", "PostgreSQL"]}

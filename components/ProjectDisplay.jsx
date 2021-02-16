@@ -1,6 +1,20 @@
 import React from 'react'
 
 const ProjectDisplay = ({ projTitle, imageUrl, pageUrl, gitUrl, description, techs }) => {
+
+  const projectWebsite = () => {
+    if (pageUrl) {
+      return <a href={pageUrl} target="_blank"><img className="link-icon" src="./icons/external-link.png" alt="external link icon"/></a>
+    } else {
+      return (
+        <div className="tooltip link-icon">
+          <img src="./icons/construction.png" alt="under construction" />
+          <div className="tooltip-text">Under Construction</div>
+        </div>
+      )
+    }
+  }
+
   return (
     <div className="project-display">
       <div className="project-thumbnail">
@@ -21,7 +35,7 @@ const ProjectDisplay = ({ projTitle, imageUrl, pageUrl, gitUrl, description, tec
         </div>
 
         <div className="product-links">
-          <a href={pageUrl} target="_blank"><img className="link-icon" src="./icons/external-link.png" alt="external link icon"/></a>
+          {projectWebsite()}
           <a href={gitUrl} target="_blank"><img className="link-icon" src="./icons/github.png" alt="github icon"/></a>
         </div>
       </div>

@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth; }
+
 html, body {
   background-color: #0f292f; }
 
@@ -41,6 +44,19 @@ nav {
   flex-direction: row;
   justify-content: space-around;
   align-items: center; }
+
+.page-links {
+  display: flex;
+  align-items: center; }
+
+.page-links a {
+  font-family: 'Source Code Pro', monospace;
+  color: #14a098;
+  text-decoration: none;
+  margin-right: 20px; }
+
+.page-links a:hover {
+  color: #13dfd4; }
 
 .hex {
   margin: 35px 0px;
@@ -104,6 +120,7 @@ nav {
 
 .bio {
   margin-top: 100px;
+  margin-bottom: 300px;
   width: 900px; }
   .bio h1 {
     color: #dddddd;
@@ -140,6 +157,13 @@ nav {
     height: 100%;
     padding: 10px 20px;
     font-size: 30px; }
+  .bio #about::before {
+    display: block;
+    content: " ";
+    margin-top: -285px;
+    height: 285px;
+    visibility: hidden;
+    pointer-events: none; }
   .bio #about {
     margin-top: 300px;
     margin-bottom: 100px; }
@@ -165,12 +189,20 @@ nav {
   align-self: flex-start;
   margin-left: 184px; }
 
-.project-displays {
+#projects-header::before {
+  display: block;
+  content: " ";
+  margin-top: -850px;
+  height: 1000px;
+  visibility: hidden;
+  pointer-events: none; }
+
+#project-displays {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 40px; }
+  margin-top: 20px; }
 
 .project-display {
   width: 900px;
@@ -236,7 +268,8 @@ nav {
   color: #999999; }
 
 .product-links {
-  margin-top: 10px; }
+  margin-top: 10px;
+  display: flex; }
 
 .project-display:nth-child(2n+1) .product-links {
   align-self: flex-end; }
@@ -256,6 +289,32 @@ nav {
 .navlink-icon {
   height: 40px;
   width: 40px; }
+
+.tooltip {
+  position: relative;
+  display: inline-block; }
+
+.tooltip .tooltip-text {
+  filter: invert(100%);
+  visibility: hidden;
+  width: 120px;
+  opacity: 80%;
+  background-color: #b37025;
+  color: #ffffff;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 10px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0px;
+  /* Position the tooltip */
+  position: absolute;
+  right: 35px;
+  top: 3px;
+  z-index: 1; }
+
+.tooltip:hover .tooltip-text {
+  filter: invert(100%);
+  visibility: visible; }
 
 .footer {
   margin-bottom: 10px;
