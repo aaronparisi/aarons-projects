@@ -13,7 +13,7 @@ const Bio = () => {
       <p id="blurb">I am a web developer based in Seattle, WA, with a passion for making websites that look beautiful, feel easy, and function well.  
       I want to help build wep applications that people actually look forward to using.</p>
 
-      <button id="email-button">
+      <button className="email-button">
         <a href="mailto: parisi.aaron@gmail.com">Get in Touch</a>
       </button>
 

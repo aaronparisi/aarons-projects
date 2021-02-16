@@ -225,34 +225,6 @@ nav {
   //   color: $bright-green;
   // }
 
-  #email-button {
-    font-size: 48px;
-    font-family: $code-font, monospace;
-    border: 1px solid $light-green;
-    background-color: $dark-green;
-    padding: 0px;
-    border-radius: 10px;
-    margin-top: 20px;
-  }
-  
-  #email-button:hover {
-    border-color: $bright-green;
-  }
-
-  #email-button a:hover {
-    color: $bright-green;
-  }
-
-  #email-button a {
-    display: inline-block;
-    // width: 320px;
-    // height: 70px;
-    width: 100%;
-    height: 100%;
-    padding: 10px 20px;
-    font-size: 30px;
-  }
-
   #about::before {
     display: block; 
     content: " "; 
@@ -297,6 +269,36 @@ nav {
   }
 }
 
+.email-button {
+  font-size: 48px;
+  font-family: $code-font, monospace;
+  border: 1px solid $light-green;
+  background-color: $dark-green;
+  padding: 0px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.email-button:hover {
+  border-color: $bright-green;
+}
+
+.email-button a:hover {
+  color: $bright-green;
+}
+
+.email-button a {
+  display: inline-block;
+  // width: 320px;
+  // height: 70px;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  font-size: 30px;
+  text-decoration: none;
+  color: $light-green;
+}
+
 #projects-header {
   align-self: flex-start;
   margin-left: 184px;
@@ -318,6 +320,7 @@ nav {
   align-items: center;
   width: 100%;
   margin-top: 20px;
+  margin-bottom: 300px;
 }
 
 .project-display {
@@ -455,6 +458,13 @@ nav {
 .tooltip:hover .tooltip-text {
   filter: invert(100%);
   visibility: visible;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 200px;
 }
 
 .footer {

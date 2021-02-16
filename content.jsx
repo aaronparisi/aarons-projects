@@ -3,6 +3,7 @@ import React from 'react'
 import NavBar from './components/NavBar'
 import Bio from './components/Bio'
 import ProjectDisplay from './components/ProjectDisplay'
+import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
 
 const Content = () => {
@@ -38,6 +39,8 @@ const Content = () => {
           techs={["Ruby", "JavaScript"]}
         />
       </div>
+
+      <ContactForm />
 
       <Footer />
     </div>

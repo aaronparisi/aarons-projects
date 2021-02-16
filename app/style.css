@@ -147,24 +147,6 @@ nav {
   #bio #blurb {
     width: 50%;
     color: #dddddd; }
-  #bio #email-button {
-    font-size: 48px;
-    font-family: "Source Code Pro", monospace;
-    border: 1px solid #14a098;
-    background-color: #0f292f;
-    padding: 0px;
-    border-radius: 10px;
-    margin-top: 20px; }
-  #bio #email-button:hover {
-    border-color: #13dfd4; }
-  #bio #email-button a:hover {
-    color: #13dfd4; }
-  #bio #email-button a {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    padding: 10px 20px;
-    font-size: 30px; }
   #bio #about::before {
     display: block;
     content: " ";
@@ -193,6 +175,30 @@ nav {
     color: #14a098;
     text-decoration: none; }
 
+.email-button {
+  font-size: 48px;
+  font-family: "Source Code Pro", monospace;
+  border: 1px solid #14a098;
+  background-color: #0f292f;
+  padding: 0px;
+  border-radius: 10px;
+  margin-top: 20px; }
+
+.email-button:hover {
+  border-color: #13dfd4; }
+
+.email-button a:hover {
+  color: #13dfd4; }
+
+.email-button a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  font-size: 30px;
+  text-decoration: none;
+  color: #14a098; }
+
 #projects-header {
   align-self: flex-start;
   margin-left: 184px; }
@@ -210,7 +216,8 @@ nav {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 20px; }
+  margin-top: 20px;
+  margin-bottom: 300px; }
 
 .project-display {
   width: 900px;
@@ -323,6 +330,12 @@ nav {
 .tooltip:hover .tooltip-text {
   filter: invert(100%);
   visibility: visible; }
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 200px; }
 
 .footer {
   margin-bottom: 10px;
