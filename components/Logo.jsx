@@ -2,7 +2,7 @@ import React from 'react'
 
 const Logo = () => {
   return (
-    <div className="logo">
+    <div id="logo">
       <a href="#root">
         <div className="hex">
           <div className="hex inner">

@@ -35,6 +35,12 @@ html, body {
   align-items: center;
 }
 
+#svgContainer { 
+  // z-index: -10;
+  position:absolute;
+  opacity: 0.5;
+}
+
 h1, h2 {
   font-family: $big-font, sans-serif;
   color: $bright-white;
@@ -151,23 +157,23 @@ nav {
   left: 0px;
 }
 
-.logo {
+#logo {
   width: min-content;
   margin: 0px 10px;
 }
 
-.logo a {
+#logo a {
   text-decoration: none;
   color: $light-green;
   font-family: 'Titillium Web', sans-serif;
   font-size: 30px;
 }
 
-.logo a:hover {
+#logo a:hover {
   color: $bright-green;
 }
 
-.bio {
+#bio {
   margin-top: 100px;
   margin-bottom: 300px;
   width: 900px;
@@ -295,7 +301,7 @@ nav {
 #projects-header::before {
   display: block; 
   content: " "; 
-  margin-top: -850px; 
+  margin-top: -1000px; 
   height: 1000px; 
   visibility: hidden; 
   pointer-events: none;

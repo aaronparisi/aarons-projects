@@ -2,8 +2,8 @@ import React from 'react'
 
 const Bio = () => {
   return (
-    <div className="bio">
-      <h4>Hi, my name is</h4>
+    <div id="bio">
+      <h4 id="greeting">Hi, my name is</h4>
       <h1>Aaron Parisi.</h1>
       <h2>I like to make websites.<br/>
         {/* <span id="pretty">look pretty</span>,<br/>
