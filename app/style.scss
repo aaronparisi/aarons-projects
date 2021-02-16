@@ -186,6 +186,7 @@ nav {
   h1 {
     color: $bright-white;
     font-size: 78px;
+    margin-bottom: -30px;
   }
 
   h2 {
@@ -241,6 +242,7 @@ nav {
 
   #about-content {
     display: flex;
+    align-items: center;
   }
 
   #about-paragraph {
@@ -277,6 +279,8 @@ nav {
   padding: 0px;
   border-radius: 10px;
   margin-top: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .email-button:hover {

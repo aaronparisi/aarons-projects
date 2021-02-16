@@ -132,7 +132,8 @@ nav {
   width: 900px; }
   #bio h1 {
     color: #dddddd;
-    font-size: 78px; }
+    font-size: 78px;
+    margin-bottom: -30px; }
   #bio h2 {
     color: #999999;
     font-size: 78px; }
@@ -158,7 +159,8 @@ nav {
     margin-top: 300px;
     margin-bottom: 100px; }
   #bio #about-content {
-    display: flex; }
+    display: flex;
+    align-items: center; }
   #bio #about-paragraph {
     width: 600px; }
   #bio #headshot-container {
@@ -182,7 +184,9 @@ nav {
   background-color: #0f292f;
   padding: 0px;
   border-radius: 10px;
-  margin-top: 20px; }
+  margin-top: 20px;
+  display: flex;
+  align-items: center; }
 
 .email-button:hover {
   border-color: #13dfd4; }
