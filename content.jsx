@@ -25,7 +25,7 @@ const Content = () => {
         <ProjectDisplay
           projTitle="Todos"
           imageUrl="./thumbnails/Todos.png"
-          pageUrl={null}
+          pageUrl="https://www.todos.aaronparisidev.com"
           gitUrl="https://github.com/aaronparisi/Todo-List-Rails-React-Redux"
           description="Overwhelmed by your galactic conquests? Keep track of your tasks with this easy-to-use todo list featuring task-reordering and color-coded completion. It is your destiny."
           techs={["Rails", "React", "Redux", "PostgreSQL"]}
