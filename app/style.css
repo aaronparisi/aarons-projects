@@ -43,13 +43,18 @@ nav {
   z-index: 3;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0px 10px;
   background-color: #0f292f;
   border-bottom: 1px solid #723356; }
 
 .navlinks {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center; }
 
@@ -115,7 +120,8 @@ nav {
 
 #logo {
   width: min-content;
-  margin: 0px 10px; }
+  margin-left: 10px;
+  margin-right: 65px; }
 
 #logo a {
   text-decoration: none;
@@ -306,8 +312,12 @@ nav {
   filter: invert(100%); }
 
 .navlink-icon {
-  height: 40px;
-  width: 40px; }
+  height: 30px;
+  width: 30px;
+  filter: invert(42%) sepia(30%) saturate(5821%) hue-rotate(151deg) brightness(99%) contrast(84%); }
+
+.navlink-icon:hover {
+  filter: invert(88%) sepia(38%) saturate(3121%) hue-rotate(114deg) brightness(94%) contrast(85%); }
 
 .tooltip {
   position: relative;
