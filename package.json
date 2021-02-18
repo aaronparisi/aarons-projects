@@ -36,5 +36,8 @@
   "description": "",
   "broswer": {
     "child_process": false
+  },
+  "devDependencies": {
+    "madge": "^4.0.0"
   }
 }

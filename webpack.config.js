@@ -40,8 +40,5 @@ module.exports = {
       "child_process": false,
       "crypto-browserify": require.resolve('crypto-browserify')
     }
-  },
-  node: {
-    // child_process: "empty"
   }
 }

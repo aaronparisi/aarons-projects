@@ -1,7 +1,32 @@
 import React from 'react'
-import sendContactEmail from '../mailer/send_mail'
+import nodemailer from 'nodemailer'
 
 const ContactForm = () => {
+  const sendContactEmail = (from, subject, text) => {
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'aaronscodingstuff@gmail.com',
+        pass: 'ldeypkamyloyqxxj'
+      }
+    })
+  
+    const mailOptions = {
+      from: from,
+      to: 'aaronscodingstuff@gmail.com',
+      subject: subject,
+      text: text
+    }
+  
+    transporter.sendMail(mailOptions, function(error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response)
+      }
+    })
+  }
+  
   return (
     <div id="contact-form">
       <h1>Say hi!</h1>
