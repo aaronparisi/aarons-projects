@@ -27,7 +27,7 @@ const Bio = () => {
             Then I worked a job at a <a href="https://www.1031services.com/">real estate exchange company</a> whose database software had some... quirks...
             <br/>
             <br/>
-            Finally it dawned on me - I want to make software that is easy to use, and that *gasp* looks nice.  With the help of <a href="https://open.appacademy.io/">App Academy Open</a>,
+            Finally it dawned on me - I want to make web applications that're easy to use, that actually work, and that *gasp* look nice.  With the help of <a href="https://open.appacademy.io/">App Academy Open</a>,
             I've been able to teach myself to do that.
           </p>
           <div id="headshot-container"><img id="headshot" src="./misc_images/headshot.png" alt="Headshot of Aaron Parisi"/></div>

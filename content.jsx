@@ -31,7 +31,7 @@ const Content = () => {
           pageUrl="https://www.todos.aaronparisidev.com"
           gitUrl="https://github.com/aaronparisi/Todo-List-Rails-React-Redux"
           description="Overwhelmed by your galactic conquests? Keep track of your tasks with this easy-to-use todo list featuring task-reordering and color-coded completion. It is your destiny."
-          techs={["Rails", "React", "Redux", "PostgreSQL"]}
+          techs={["Rails", "React", "Redux", "PostgreSQL", "Webpacker"]}
         />
         <ProjectDisplay
           projTitle="TicTacToe"
@@ -40,6 +40,15 @@ const Content = () => {
           pageUrl="https://www.tictactoe.aaronparisidev.com"
           gitUrl="https://github.com/aaronparisi/TicTacToe"
           description="No more wasted paper or yucky chalk dust with this sleek, reset-able rendition of your favorite childhood game. No cheating allowed (or possible)."
+          techs={["Ruby", "JavaScript"]}
+        />
+        <ProjectDisplay
+          projTitle="Minesweeper"
+          imageUrl="./thumbnails/minesweeper.png"
+          // pageUrl="https://minesweeper-39691.web.app/"
+          pageUrl="https://www.minesweeper.aaronparisidev.com"
+          gitUrl="https://github.com/aaronparisi/Minesweeper"
+          description="Just when you thought the world had enough basic version of this endlessly annoying game...  No need to thank me."
           techs={["Ruby", "JavaScript"]}
         />
       </div>
