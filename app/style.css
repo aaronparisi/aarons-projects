@@ -133,7 +133,7 @@ nav {
   color: #13dfd4; }
 
 #bio {
-  margin-top: 100px;
+  margin-top: 180px;
   margin-bottom: 300px;
   width: 900px; }
   #bio h1 {
@@ -166,7 +166,8 @@ nav {
     margin-bottom: 100px; }
   #bio #about-content {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    line-height: 1.3; }
   #bio #about-paragraph {
     width: 600px; }
   #bio #headshot-container {
@@ -252,7 +253,14 @@ nav {
 .thumbnail-image {
   height: 400px;
   width: 1000px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  filter: brightness(0.5);
+  -webkit-filter: brightness(0.5);
+  transition: all .2s ease-in-out; }
+
+.thumbnail-image:hover {
+  filter: brightness(1);
+  -webkit-filter: brightness(1); }
 
 .project-info {
   color: #cccccc;
