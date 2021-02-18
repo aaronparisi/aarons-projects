@@ -21,7 +21,27 @@ module.exports = {
   },
   devtool: 'source-map',
   resolve: {
-    extensions: [".js", ".jsx", "*"]
+    extensions: [".js", ".jsx", "*"],
+    fallback: {
+      "fs": false,
+      "tls": false,
+      "net": false,
+      "path": false,
+      "zlib": false,
+      "http": false,
+      "https": false,
+      "stream": false,
+      "crypto": false,
+      "os": false,
+      "url": false,
+      "util": false,
+      "os": false,
+      "dns": false,
+      "child_process": false,
+      "crypto-browserify": require.resolve('crypto-browserify')
+    }
   },
-  target: 'node'
+  node: {
+    // child_process: "empty"
+  }
 }
