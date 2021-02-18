@@ -42,7 +42,7 @@ const Content = () => {
           description="No more wasted paper or yucky chalk dust with this sleek, reset-able rendition of your favorite childhood game. No cheating allowed (or possible)."
           techs={["Ruby", "JavaScript"]}
         />
-        <ProjectDisplay
+        {/* <ProjectDisplay
           projTitle="Minesweeper"
           imageUrl="./thumbnails/minesweeper.png"
           // pageUrl="https://minesweeper-39691.web.app/"
@@ -50,7 +50,7 @@ const Content = () => {
           gitUrl="https://github.com/aaronparisi/Minesweeper"
           description="Just when you thought the world had enough basic version of this endlessly annoying game...  No need to thank me."
           techs={["Ruby", "JavaScript"]}
-        />
+        /> */}
       </div>
 
       <ContactForm />
