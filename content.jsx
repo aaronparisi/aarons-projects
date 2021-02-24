@@ -15,6 +15,24 @@ const Content = () => {
       <h1 id="projects-header">My Projects</h1>
       <div id="project-displays">
         <ProjectDisplay
+          projTitle="Frontend Auth"
+          imageUrl="./thumbnails/Todos.png"
+          // pageUrl="https://aarons-todos.herokuapp.com/"
+          pageUrl="http://www.todos.aaronparisidev.com"
+          gitUrl="https://github.com/aaronparisi/Todo-List-Rails-React-Redux"
+          description="Overwhelmed by your galactic conquests? Keep track of your tasks with this easy-to-use todo list featuring task-reordering and color-coded completion. It is your destiny."
+          techs={["Rails", "React", "Redux", "PostgreSQL", "Webpacker"]}
+        />
+        <ProjectDisplay
+          projTitle="Todos"
+          imageUrl="./thumbnails/Todos.png"
+          // pageUrl="https://aarons-todos.herokuapp.com/"
+          pageUrl="http://www.todos.aaronparisidev.com"
+          gitUrl="https://github.com/aaronparisi/Todo-List-Rails-React-Redux"
+          description="Overwhelmed by your galactic conquests? Keep track of your tasks with this easy-to-use todo list featuring task-reordering and color-coded completion. It is your destiny."
+          techs={["Rails", "React", "Redux", "PostgreSQL", "Webpacker"]}
+        />
+        <ProjectDisplay
           projTitle="Towers of Hanoi"
           imageUrl="./thumbnails/Towers.png"
           pageUrl="https://towers-of-hanoi-e1df0.web.app/"
@@ -24,19 +42,10 @@ const Content = () => {
           techs={["jQuery"]}
         />
         <ProjectDisplay
-          projTitle="Todos"
-          imageUrl="./thumbnails/Todos.png"
-          pageUrl="https://aarons-todos.herokuapp.com/"
-          // pageUrl="http://www.todos.aaronparisidev.com"  // ? can I make this secure?
-          gitUrl="https://github.com/aaronparisi/Todo-List-Rails-React-Redux"
-          description="Overwhelmed by your galactic conquests? Keep track of your tasks with this easy-to-use todo list featuring task-reordering and color-coded completion. It is your destiny."
-          techs={["Rails", "React", "Redux", "PostgreSQL", "Webpacker"]}
-        />
-        <ProjectDisplay
           projTitle="TicTacToe"
           imageUrl="./thumbnails/TicTacToe.png"
-          pageUrl="https://tictactoe-32141.web.app/"
-          // pageUrl="http://www.tictactoe.aaronparisidev.com"
+          // pageUrl="https://tictactoe-32141.web.app/"
+          pageUrl="http://www.tictactoe.aaronparisidev.com"
           gitUrl="https://github.com/aaronparisi/TicTacToe"
           description="No more wasted paper or yucky chalk dust with this sleek, reset-able rendition of your favorite childhood game. No cheating allowed (or possible)."
           techs={["Ruby", "JavaScript"]}
