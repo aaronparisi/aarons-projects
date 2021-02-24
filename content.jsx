@@ -15,7 +15,7 @@ const Content = () => {
       <h1 id="projects-header">My Projects</h1>
       <div id="project-displays">
         <ProjectDisplay
-          projTitle="Frontend Auth"
+          projTitle="Todos"
           imageUrl="./thumbnails/Todos.png"
           // pageUrl="https://aarons-todos.herokuapp.com/"
           pageUrl="http://www.todos.aaronparisidev.com"
@@ -24,13 +24,12 @@ const Content = () => {
           techs={["Rails", "React", "Redux", "PostgreSQL", "Webpacker"]}
         />
         <ProjectDisplay
-          projTitle="Todos"
-          imageUrl="./thumbnails/Todos.png"
-          // pageUrl="https://aarons-todos.herokuapp.com/"
-          pageUrl="http://www.todos.aaronparisidev.com"
-          gitUrl="https://github.com/aaronparisi/Todo-List-Rails-React-Redux"
-          description="Overwhelmed by your galactic conquests? Keep track of your tasks with this easy-to-use todo list featuring task-reordering and color-coded completion. It is your destiny."
-          techs={["Rails", "React", "Redux", "PostgreSQL", "Webpacker"]}
+          projTitle="Frontend Auth"
+          imageUrl="./thumbnails/bluebird.png"
+          pageUrl="http://www.frontend-auth.aaronparisidev.com"
+          gitUrl="https://github.com/aaronparisi/front-end-auth-demo-frontend"
+          description="While not the most... ~stunning~ application ever written (... or even the most functinoal), this project was a configuration nightmare.  Separating frontend and Rails 6 API made implementing the session... well... let's just say there was a lot of googling involved."
+          techs={["Rails6", "React", "Redux", "PostgreSQL"]}
         />
         <ProjectDisplay
           projTitle="Towers of Hanoi"
