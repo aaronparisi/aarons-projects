@@ -28,7 +28,7 @@ const Content = () => {
           imageUrl="./thumbnails/bluebird.png"
           pageUrl="http://www.frontend-auth.aaronparisidev.com"
           gitUrl="https://github.com/aaronparisi/front-end-auth-demo-frontend"
-          description="While not the most... ~stunning~ application ever written (... or even the most functinoal), this project was a configuration nightmare.  Separating frontend and Rails 6 API made implementing the session... well... let's just say there was a lot of googling involved."
+          description="While not the most stunning application ever written (or even the most functinoal), this project was a configuration nightmare.  Separating frontend and Rails 6 API made implementing the session... well... let's just say there was a lot of googling involved."
           techs={["Rails6", "React", "Redux", "PostgreSQL"]}
         />
         <ProjectDisplay
