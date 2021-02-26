@@ -6,20 +6,11 @@ import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
 import $ from 'jquery'
 
-const Content = () => {
-  const [delayedStatus, setDelayedStatus] = useState('hidden')
-  $(function() {
-    setTimeout(() => {
-      console.log('making stuff visible')
-      // ? why is this happening 3 times??
-      setDelayedStatus('visible')
-    }, 2000);
-  })
-  
+const Content = () => {  
   return (
     <div className="content">
       <NavBar />
-      <Bio delayedStatus={delayedStatus}/>
+      <Bio />
       
       <h1 id="projects-header">My Projects</h1>
       <div id="project-displays">
