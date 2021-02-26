@@ -157,13 +157,14 @@ nav {
   #bio #about::before {
     display: block;
     content: " ";
-    margin-top: -285px;
+    margin-top: -120px;
     height: 360px;
     visibility: hidden;
     pointer-events: none; }
   #bio #about {
-    margin-top: 300px;
-    margin-bottom: 100px; }
+    margin-top: 450px;
+    margin-bottom: 100px;
+    flex-direction: column; }
   #bio #about-content {
     display: flex;
     align-items: center;
@@ -214,11 +215,11 @@ nav {
   align-self: flex-start;
   margin-left: 184px; }
 
-#projects-header::before {
-  display: block;
+#projects-displays-container::before {
+  margin-top: -400px;
+  height: 560px;
   content: " ";
-  margin-top: -850px;
-  height: 1000px;
+  display: block;
   visibility: hidden;
   pointer-events: none; }
 

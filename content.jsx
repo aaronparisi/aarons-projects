@@ -1,70 +1,140 @@
 import React, { useState } from 'react'
 import NavBar from './components/NavBar'
 import Bio from './components/Bio'
-import ProjectDisplay from './components/ProjectDisplay'
+import ProjectDisplays from './components/ProjectDisplays'
 import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
-import $ from 'jquery'
 
-const Content = () => {  
-  return (
-    <div className="content">
-      <NavBar />
-      <Bio />
-      
-      <h1 id="projects-header">My Projects</h1>
-      <div id="project-displays">
-        <ProjectDisplay
-          projTitle="Todos"
-          imageUrl="./thumbnails/Todos.png"
-          // pageUrl="https://aarons-todos.herokuapp.com/"
-          pageUrl="http://www.todos.aaronparisidev.com"
-          gitUrl="https://github.com/aaronparisi/Todo-List-Rails-React-Redux"
-          description="Overwhelmed by your galactic conquests? Keep track of your tasks with this easy-to-use todo list featuring task-reordering and color-coded completion. It is your destiny."
-          techs={["Rails", "React", "Redux", "PostgreSQL", "Webpacker"]}
+class Content extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      titleTheme: {
+        visibility: 'hidden',
+        opacity: 0
+      },
+      subtitleTheme: {
+        visibility: 'hidden',
+        opacity: 0
+      },
+      blurbTheme: {
+        visibility: 'hidden',
+        opacity: 0
+      },
+      delayedTheme: {
+        visibility: 'hidden',
+        opacity: 0
+      },
+      notDisplayedTheme: {
+        display: 'none',
+        visibility: 'hidden',
+        opacity: 0
+      },
+      typewriterText: "Hi, my name is",
+      writtenText: ""
+    }
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.typeTextLoop(0)
+      .then(
+        msg => {
+          this.titleTimeout()
+          this.subtitleTimeout()
+          this.blurbTimeout()
+          this.linksTimeout()
+          this.restTimeout()
+        },
+        err => {
+          console.log('error running then block')
+        }
+      )
+    }, 2500);
+  }
+
+  typeTextLoop(idx) {
+    return new Promise((resolve, reject) => {
+      if (idx < this.state.typewriterText.length) {
+        setTimeout(() => {
+          this.setState({ writtenText: this.state.writtenText + this.state.typewriterText[idx]})
+          this.typeTextLoop(idx+1)
+          .then(() => resolve('done'))
+        }, 50)
+      } else {
+        resolve('done')
+      }
+    })
+  }
+
+  titleTimeout() {
+    setTimeout(() => {
+      let titleTheme = {...this.state.titleTheme}
+      titleTheme.visibility = 'visible'
+      titleTheme.opacity = 100
+      this.setState({titleTheme})
+    }, 1000);
+  }
+
+  subtitleTimeout() {
+    setTimeout(() => {
+      let subtitleTheme = {...this.state.subtitleTheme}
+      subtitleTheme.visibility = 'visible'
+      subtitleTheme.opacity = 100
+      this.setState({subtitleTheme})
+    }, 2000);
+  }
+  
+  blurbTimeout() {
+    setTimeout(() => {
+      let blurbTheme = {...this.state.blurbTheme}
+      blurbTheme.visibility = 'visible'
+      blurbTheme.opacity = 100
+      this.setState({blurbTheme})
+    }, 4000);
+  }
+
+  linksTimeout() {
+    setTimeout(() => {
+      let delayedTheme = {...this.state.delayedTheme}
+      delayedTheme.visibility = 'visible'
+      delayedTheme.opacity = 100
+      this.setState({delayedTheme})
+    }, 8000);
+  }
+
+  restTimeout() {
+    setTimeout(() => {
+      let notDisplayedTheme = {...this.state.notDisplayedTheme}
+      notDisplayedTheme.visibility = 'visible'
+      notDisplayedTheme.opacity = 100
+      notDisplayedTheme.display = 'flex'
+      this.setState({notDisplayedTheme})
+    }, 8000);
+  }
+
+  render() {
+    return (
+      <div className="content">
+        <NavBar theme={this.state.delayedTheme}/>
+        <Bio
+          titleTheme={this.state.titleTheme}
+          subtitleTheme={this.state.subtitleTheme} 
+          blurbTheme={this.state.blurbTheme}
+          emailButtonTheme={this.state.delayedTheme}
+          writtenText={this.state.writtenText}
+          notDisplayedTheme={this.state.notDisplayedTheme}
         />
-        <ProjectDisplay
-          projTitle="Frontend Auth"
-          imageUrl="./thumbnails/bluebird.png"
-          pageUrl="https://www.frontend-auth.aaronparisidev.com/"
-          gitUrl="https://github.com/aaronparisi/front-end-auth-demo-frontend"
-          description="While not the most stunning application ever written (or even the most functinoal), this project was a configuration nightmare.  Separating frontend and Rails 6 API made implementing the session... well... let's just say there was a lot of googling involved."
-          techs={["Rails6", "React", "Redux", "PostgreSQL"]}
-        />
-        <ProjectDisplay
-          projTitle="Towers of Hanoi"
-          imageUrl="./thumbnails/Towers.png"
-          pageUrl="https://www.towers.aaronparisidev.com/"
-          // pageUrl="http://www.towers.aaronparisidev.com"
-          gitUrl="https://github.com/aaronparisi/Towers-of-Hanoi-jQuery"
-          description="Are you smarter than a boot-camper? See if you can complete this classic game in fewer moves than the recursive AI."
-          techs={["jQuery"]}
-        />
-        <ProjectDisplay
-          projTitle="TicTacToe"
-          imageUrl="./thumbnails/TicTacToe.png"
-          // pageUrl="https://tictactoe-32141.web.app/"
-          pageUrl="https://www.tictactoe.aaronparisidev.com"
-          gitUrl="https://github.com/aaronparisi/TicTacToe"
-          description="No more wasted paper or yucky chalk dust with this sleek, reset-able rendition of your favorite childhood game. No cheating allowed (or possible)."
-          techs={["Ruby", "JavaScript"]}
-        />
-        {/* <ProjectDisplay
-          projTitle="Minesweeper"
-          imageUrl="./thumbnails/minesweeper.png"
-          // pageUrl="https://minesweeper-39691.web.app/"
-          pageUrl="https://www.minesweeper.aaronparisidev.com"
-          gitUrl="https://github.com/aaronparisi/Minesweeper"
-          description="Just when you thought the world had enough basic version of this endlessly annoying game...  No need to thank me."
-          techs={["Ruby", "JavaScript"]}
-        /> */}
+
+        <ProjectDisplays theme={this.state.notDisplayedTheme} />
+  
+        <ContactForm theme={this.state.notDisplayedTheme}/>
+  
+        <Footer theme={this.state.notDisplayedTheme}/>
       </div>
-
-      <ContactForm />
-
-      <Footer />
-    </div>
-  )
+    )
+  }
 }
 
 export default Content
