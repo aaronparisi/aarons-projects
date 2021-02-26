@@ -382,4 +382,8 @@ nav {
   font-size: 70px;
   color: #14a098; }
 
+.delayed-visible {
+  visibility: visible;
+  opacity: 100%; }
+
 /*# sourceMappingURL=style.css.map */

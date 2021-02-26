@@ -1,16 +1,25 @@
-import React from 'react'
-
+import React, { useState } from 'react'
 import NavBar from './components/NavBar'
 import Bio from './components/Bio'
 import ProjectDisplay from './components/ProjectDisplay'
 import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
+import $ from 'jquery'
 
 const Content = () => {
+  const [delayedStatus, setDelayedStatus] = useState('hidden')
+  $(function() {
+    setTimeout(() => {
+      console.log('making stuff visible')
+      // ? why is this happening 3 times??
+      setDelayedStatus('visible')
+    }, 2000);
+  })
+  
   return (
     <div className="content">
       <NavBar />
-      <Bio />
+      <Bio delayedStatus={delayedStatus}/>
       
       <h1 id="projects-header">My Projects</h1>
       <div id="project-displays">

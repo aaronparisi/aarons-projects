@@ -9,6 +9,6 @@ const timeoutLoop = () => {
   }, 500);
 }
 
-$(document).ready(() => {
+$(function() {
   timeoutLoop()
 })
