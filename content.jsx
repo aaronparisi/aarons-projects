@@ -83,7 +83,7 @@ class Content extends React.Component {
       subtitleTheme.visibility = 'visible'
       subtitleTheme.opacity = 100
       this.setState({subtitleTheme})
-    }, 2000);
+    }, 2500);
   }
   
   blurbTimeout() {

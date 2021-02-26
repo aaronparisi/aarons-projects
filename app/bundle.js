@@ -1321,10 +1321,12 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var StyledDiv = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  opacity: ", "%;\n  visibility: ", ";\n  transition: opacity 1.5s ease-in-out;\n"])), function (props) {
+var StyledDiv = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  opacity: ", "%;\n  visibility: ", ";\n  transition: opacity 1.5s ease-in-out;\n  display: ", "\n"])), function (props) {
   return props.theme.opacity;
 }, function (props) {
   return props.theme.visibility;
+}, function (props) {
+  return props.theme.display;
 });
 
 var ProjectDisplays = /*#__PURE__*/function (_React$Component) {
@@ -1558,7 +1560,7 @@ var Content = /*#__PURE__*/function (_React$Component) {
         _this5.setState({
           subtitleTheme: subtitleTheme
         });
-      }, 2000);
+      }, 2500);
     }
   }, {
     key: "blurbTimeout",

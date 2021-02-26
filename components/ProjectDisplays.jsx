@@ -6,6 +6,7 @@ const StyledDiv = styled.div`
   opacity: ${props => props.theme.opacity}%;
   visibility: ${props => props.theme.visibility};
   transition: opacity 1.5s ease-in-out;
+  display: ${props => props.theme.display}
 `
 
 class ProjectDisplays extends React.Component {

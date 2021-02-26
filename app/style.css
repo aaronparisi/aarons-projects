@@ -4,6 +4,9 @@ html {
 html, body {
   background-color: #0f292f; }
 
+content *:not(nav) {
+  margin: 0px 10px; }
+
 .content {
   display: flex;
   flex-direction: column;
@@ -222,6 +225,9 @@ nav {
   display: block;
   visibility: hidden;
   pointer-events: none; }
+
+#projects-displays-container {
+  flex-direction: column; }
 
 #project-displays {
   display: flex;

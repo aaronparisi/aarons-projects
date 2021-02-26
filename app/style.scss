@@ -29,6 +29,10 @@ html, body {
   background-color: $dark-green;
 }
 
+content *:not(nav) {
+  margin: 0px 10px;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -317,15 +321,6 @@ nav {
   // ! this is not good
 }
 
-// #projects-header::before {
-//   display: block; 
-//   content: " "; 
-//   margin-top: -850px; 
-//   height: 1000px; 
-//   visibility: hidden; 
-//   pointer-events: none;
-// }
-
 #projects-displays-container::before {
   margin-top: -400px;
   height: 560px;
@@ -333,6 +328,10 @@ nav {
   display: block;
   visibility: hidden;
   pointer-events: none;
+}
+
+#projects-displays-container {
+  flex-direction: column;
 }
 
 #project-displays {
