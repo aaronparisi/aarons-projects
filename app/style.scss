@@ -3,6 +3,7 @@ $med-green: #13373f;
 $light-green: #14a098;
 $bright-green: #13dfd4;
 
+$gray: #888888;
 $dull-white: #999999;
 $white: #cccccc;
 $bright-white: #dddddd;
@@ -63,7 +64,7 @@ h2 {
   font-size: 36px;
 }
 
-p {
+p, li {
   font-family: 'Titillium Web', sans-serif;
   font-size: 16px;
   color: $white;
@@ -188,20 +189,24 @@ nav {
   color: $bright-green;
 }
 
+.main-content {
+  width: 90%;
+}
+
 #bio {
   margin-top: 180px;
   margin-bottom: 300px;
-  width: 900px;
 
   h1 {
     color: $bright-white;
     font-size: 78px;
-    margin-bottom: -30px;
+    margin-bottom: -15px;
   }
 
   h2 {
     color: $dull-white;
     font-size: 78px;
+    line-height: 1;
   }
 
   h3 {
@@ -262,7 +267,7 @@ nav {
   }
 
   #about-paragraph {
-    width: 600px;
+    width: 70%;
   }
 
   #headshot-container {
@@ -321,8 +326,7 @@ nav {
 
 #projects-header {
   align-self: flex-start;
-  margin-left: 184px;
-  // ! this is not good
+  margin-bottom: 20px;
 }
 
 #projects-displays-container::before {
@@ -336,55 +340,65 @@ nav {
 
 #projects-displays-container {
   flex-direction: column;
+  align-items: center;
 }
 
 #project-displays {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
+  // align-items: center;
+  width: 95%;
   margin-top: 20px;
   margin-bottom: 300px;
 }
 
 .project-display {
-  width: $project-display-width;
+  // width: $project-display-width;
   height: $project-display-height;
   margin-bottom: 100px;
   display: flex;
+  position: relative;
 }
 
 .project-display:nth-child(2n+1) {
   flex-direction: row;
   text-align: left;
+
+  .project-info {
+    right: 10%;
+    // todo is there a way to make the info 'slide' over the image on horiz resize?
+  }
 }
 
 .project-display:nth-child(2n) {
   flex-direction: row-reverse;
   text-align: right;
+
+  .project-info {
+    left: 10%;
+  }
 }
 
 .project-thumbnail {
-  // filter: sepia() saturate(100%) brightness(65%) hue-rotate(140deg);
-  width: 1000px;
+  width: 600px;
 }
 
-.project-thumbnail:hover {
-  filter: none;
+.project-thumbnail:hover + .project-info .project-title {
+
 }
 
 .thumbnail-image {
   height: $project-display-height;
   width: 1000px;
   border-radius: 5px;
-  filter: brightness(0.5);
-  -webkit-filter: brightness(0.5);
-  transition: all .2s ease-in-out;
+  filter: brightness(.6);
+  -webkit-filter: brightness(.6);
+  // transition: all .2s ease-in-out;
 }
 
 .thumbnail-image:hover {
-  filter:brightness(1);
-  -webkit-filter: brightness(1);
+  // filter:brightness(.8);
+  // -webkit-filter: brightness(.8);
 }
 
 .project-info {
@@ -395,16 +409,29 @@ nav {
   flex-direction: column;
   align-items: center;
   margin-top: 70px;
+  position: absolute;
 }
 
 .project-title {
   margin: 0px 10px;
+  transition: text-shadow .2s ease-in-out;
+  text-align: center;
+  width: max-content;
+  text-shadow: 
+    0px 0px 5px $dark-green,
+    1px 0px 5px $dark-green,
+    1px 1px 5px $dark-green,
+    0px 1px 5px $dark-green,
+    -1px 1px 5px $dark-green,
+    -1px 0px 5px $dark-green,
+    -1px -1px 5px $dark-green,
+    0px -1px 5px $dark-green
 }
 
 .project-details {
   background-color: $med-green;
   padding: 20px;
-  width: 500px;
+  width: 175%;
   overflow: visible;
   z-index: 1;
   border-radius: 5px;
@@ -536,4 +563,14 @@ nav {
 .delayed-visible {
   visibility: visible;
   opacity: 100%;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links li {
+  padding: 0px 5px;
 }

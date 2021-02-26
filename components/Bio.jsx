@@ -5,7 +5,7 @@ import About from './About'
 const StyledH1 = styled.h1`
   opacity: ${props => props.theme.opacity}%;
   visibility: ${props => props.theme.visibility};
-  transition: opacity 2s ease-in-out;
+  transition: opacity 1s ease-in-out;
 `
 
 const StyledH2 = styled.h2`

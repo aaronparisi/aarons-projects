@@ -852,7 +852,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var StyledH1 = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.h1(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  opacity: ", "%;\n  visibility: ", ";\n  transition: opacity 2s ease-in-out;\n"])), function (props) {
+var StyledH1 = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.h1(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  opacity: ", "%;\n  visibility: ", ";\n  transition: opacity 1s ease-in-out;\n"])), function (props) {
   return props.theme.opacity;
 }, function (props) {
   return props.theme.visibility;
@@ -1035,7 +1035,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var StyledP = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.p(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  opacity: ", "%;\n  visibility: ", ";\n  transition: opacity 1.5s ease-in-out;\n  display: ", ";\n"])), function (props) {
+var StyledUl = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.ul(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  opacity: ", "%;\n  visibility: ", ";\n  transition: opacity 1.5s ease-in-out;\n  display: ", ";\n"])), function (props) {
   return props.theme.opacity;
 }, function (props) {
   return props.theme.visibility;
@@ -1047,17 +1047,17 @@ var Footer = function Footer(_ref) {
   var theme = _ref.theme;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(styled_components__WEBPACK_IMPORTED_MODULE_1__.ThemeProvider, {
     theme: theme
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(StyledP, {
-    className: "footer"
-  }, "Design inspired by ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(StyledUl, {
+    className: "footer footer-links"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "Design inspired by ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     href: "https://brittanychiang.com/"
-  }, " Brittany Chiang"), " | Blinking Cursor inspired by ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+  }, " Brittany Chiang"), "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "Blinking Cursor inspired by ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     href: "https://codepen.io/ArtemGordinsky"
-  }, " Artem Gordinsky"), " | Icons courtesy of ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+  }, " Artem Gordinsky"), "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "Icons courtesy of ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     href: "https://icons8.com/icons/"
-  }, " Icons8"), " | Icon filters courtesy of ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+  }, " Icons8"), "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "Icon filters courtesy of ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     href: "https://codepen.io/sosuke"
-  }, " Barrett Sonntag")));
+  }, " Barrett Sonntag"), ".")));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Footer);
@@ -1379,7 +1379,7 @@ var ProjectDisplays = /*#__PURE__*/function (_React$Component) {
         imageUrl: "./thumbnails/bluebird.png",
         pageUrl: "https://www.frontend-auth.aaronparisidev.com/",
         gitUrl: "https://github.com/aaronparisi/front-end-auth-demo-frontend",
-        description: "While not the most stunning application ever written (or even the most functinoal), this project was a configuration nightmare.  Separating frontend and Rails 6 API made implementing the session... well... let's just say there was a lot of googling involved.",
+        description: "Is THIS why the birds are so angry?? This project may not do much, but it was a configuration nightmare.  Building a React+Redux frontend on top of a standalone Rails 6 API made implementing the session... yea... And let's not talk about * rubs temples * deployment.",
         techs: ["Rails6", "React", "Redux", "PostgreSQL"]
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ProjectDisplay__WEBPACK_IMPORTED_MODULE_1__.default, {
         projTitle: "Towers of Hanoi",
@@ -1504,6 +1504,11 @@ var Content = /*#__PURE__*/function (_React$Component) {
 
     return _this;
   }
+  /*
+  option 1: flash terminal, 0s delay for h1, blurb and nav come in at same time
+  option 2: no flash, 1s delay for h1, blurb comes in before nav
+  */
+
 
   _createClass(Content, [{
     key: "componentDidMount",
@@ -1512,8 +1517,7 @@ var Content = /*#__PURE__*/function (_React$Component) {
 
       setTimeout(function () {
         _this2.typeTextLoop(0).then(function (msg) {
-          _this2.flashTerminal();
-
+          // this.flashTerminal()
           _this2.titleTimeout();
 
           _this2.subtitleTimeout();
@@ -1526,7 +1530,7 @@ var Content = /*#__PURE__*/function (_React$Component) {
         }, function (err) {
           console.log('error running then block');
         });
-      }, 2500);
+      }, 500);
     }
   }, {
     key: "typeTextLoop",
@@ -1572,12 +1576,12 @@ var Content = /*#__PURE__*/function (_React$Component) {
           // change back to dark
           var terminalTheme = _objectSpread({}, _this4.state.terminalTheme);
 
-          terminalTheme.color = '#14a098', terminalTheme.transition = 'color 2s ease-out';
+          terminalTheme.color = '#14a098', terminalTheme.transition = 'color .5s ease-out';
 
           _this4.setState({
             terminalTheme: terminalTheme
           });
-        }, 500); // * this is ugly
+        }, 100); // * this is ugly
       }, 1500);
     }
   }, {
@@ -1594,7 +1598,7 @@ var Content = /*#__PURE__*/function (_React$Component) {
         _this5.setState({
           titleTheme: titleTheme
         });
-      }, 1500);
+      }, 1000);
     }
   }, {
     key: "subtitleTimeout",
@@ -1610,7 +1614,7 @@ var Content = /*#__PURE__*/function (_React$Component) {
         _this6.setState({
           subtitleTheme: subtitleTheme
         });
-      }, 3500);
+      }, 2000);
     }
   }, {
     key: "blurbTimeout",
@@ -1626,7 +1630,7 @@ var Content = /*#__PURE__*/function (_React$Component) {
         _this7.setState({
           blurbTheme: blurbTheme
         });
-      }, 5500);
+      }, 3000);
     }
   }, {
     key: "linksTimeout",
@@ -1642,7 +1646,7 @@ var Content = /*#__PURE__*/function (_React$Component) {
         _this8.setState({
           delayedTheme: delayedTheme
         });
-      }, 9500);
+      }, 4000);
     }
   }, {
     key: "restTimeout",
@@ -1659,7 +1663,7 @@ var Content = /*#__PURE__*/function (_React$Component) {
         _this9.setState({
           notDisplayedTheme: notDisplayedTheme
         });
-      }, 9500);
+      }, 4000);
     }
   }, {
     key: "render",
@@ -1668,7 +1672,9 @@ var Content = /*#__PURE__*/function (_React$Component) {
         className: "content"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_NavBar__WEBPACK_IMPORTED_MODULE_1__.default, {
         theme: this.state.delayedTheme
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Bio__WEBPACK_IMPORTED_MODULE_2__.default, {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "main-content"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Bio__WEBPACK_IMPORTED_MODULE_2__.default, {
         terminalTheme: this.state.terminalTheme,
         titleTheme: this.state.titleTheme,
         subtitleTheme: this.state.subtitleTheme,
@@ -1682,7 +1688,7 @@ var Content = /*#__PURE__*/function (_React$Component) {
         theme: this.state.notDisplayedTheme
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_5__.default, {
         theme: this.state.notDisplayedTheme
-      }));
+      })));
     }
   }]);
 
@@ -1706,6 +1712,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _content__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./content */ "./content.jsx");
 
 
+
+
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
+
+window.onload = function () {
+  history.scrollRestoration = "manual";
+};
 
 document.addEventListener("DOMContentLoaded", function () {
   var root = document.getElementById("root");

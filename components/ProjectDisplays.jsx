@@ -34,7 +34,7 @@ class ProjectDisplays extends React.Component {
               imageUrl="./thumbnails/bluebird.png"
               pageUrl="https://www.frontend-auth.aaronparisidev.com/"
               gitUrl="https://github.com/aaronparisi/front-end-auth-demo-frontend"
-              description="While not the most stunning application ever written (or even the most functinoal), this project was a configuration nightmare.  Separating frontend and Rails 6 API made implementing the session... well... let's just say there was a lot of googling involved."
+              description="Is THIS why the birds are so angry?? This project may not do much, but it was a configuration nightmare.  Building a React+Redux frontend on top of a standalone Rails 6 API made implementing the session... yea... And let's not talk about * rubs temples * deployment."
               techs={["Rails6", "React", "Redux", "PostgreSQL"]}
             />
             <ProjectDisplay

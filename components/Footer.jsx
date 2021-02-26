@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 
-const StyledP = styled.p`
+const StyledUl = styled.ul`
   opacity: ${props => props.theme.opacity}%;
   visibility: ${props => props.theme.visibility};
   transition: opacity 1.5s ease-in-out;
@@ -11,11 +11,14 @@ const StyledP = styled.p`
 const Footer = ({ theme }) => {
   return (
     <ThemeProvider theme={theme} >
-      <StyledP
-        className="footer"
+      <StyledUl
+        className="footer footer-links"
       >
-        Design inspired by <a href="https://brittanychiang.com/"> Brittany Chiang</a> | Blinking Cursor inspired by <a href="https://codepen.io/ArtemGordinsky"> Artem Gordinsky</a> | Icons courtesy of <a href="https://icons8.com/icons/"> Icons8</a> | Icon filters courtesy of <a href="https://codepen.io/sosuke"> Barrett Sonntag</a>
-      </StyledP>
+        <li>Design inspired by <a href="https://brittanychiang.com/"> Brittany Chiang</a>.</li>
+        <li>Blinking Cursor inspired by <a href="https://codepen.io/ArtemGordinsky"> Artem Gordinsky</a>.</li>
+        <li>Icons courtesy of <a href="https://icons8.com/icons/"> Icons8</a>.</li>
+        <li>Icon filters courtesy of <a href="https://codepen.io/sosuke"> Barrett Sonntag</a>.</li>
+      </StyledUl>
     </ThemeProvider>
   )
 }

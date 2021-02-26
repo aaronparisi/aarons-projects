@@ -43,12 +43,17 @@ class Content extends React.Component {
     // todo i'm surprised it didn't yell at me for not binding functions...
   }
 
+  /*
+  option 1: flash terminal, 0s delay for h1, blurb and nav come in at same time
+  option 2: no flash, 1s delay for h1, blurb comes in before nav
+  */
+
   componentDidMount() {
     setTimeout(() => {
       this.typeTextLoop(0)
       .then(
         msg => {
-          this.flashTerminal()
+          // this.flashTerminal()
           this.titleTimeout()
           this.subtitleTimeout()
           this.blurbTimeout()
@@ -59,7 +64,7 @@ class Content extends React.Component {
           console.log('error running then block')
         }
       )
-    }, 2500);
+    }, 500);
   }
 
   typeTextLoop(idx) {
@@ -90,9 +95,9 @@ class Content extends React.Component {
         // change back to dark
         let terminalTheme = {...this.state.terminalTheme}
         terminalTheme.color = '#14a098',
-        terminalTheme.transition = 'color 2s ease-out'
+        terminalTheme.transition = 'color .5s ease-out'
         this.setState({terminalTheme})
-      }, 500);
+      }, 100);
       // * this is ugly
     }, 1500);
   }
@@ -105,7 +110,7 @@ class Content extends React.Component {
 
       // this.flashTerminal()
       this.setState({titleTheme })
-    }, 1500);
+    }, 1000);
   }
 
   subtitleTimeout() {
@@ -117,7 +122,7 @@ class Content extends React.Component {
 
       // this.flashTerminal()
       this.setState({subtitleTheme})
-    }, 3500);
+    }, 2000);
   }
   
   blurbTimeout() {
@@ -126,7 +131,7 @@ class Content extends React.Component {
       blurbTheme.visibility = 'visible'
       blurbTheme.opacity = 100
       this.setState({blurbTheme})
-    }, 5500);
+    }, 3000);
   }
 
   linksTimeout() {
@@ -135,7 +140,7 @@ class Content extends React.Component {
       delayedTheme.visibility = 'visible'
       delayedTheme.opacity = 100
       this.setState({delayedTheme})
-    }, 9500);
+    }, 4000);
   }
 
   restTimeout() {
@@ -145,28 +150,30 @@ class Content extends React.Component {
       notDisplayedTheme.opacity = 100
       notDisplayedTheme.display = 'flex'
       this.setState({notDisplayedTheme})
-    }, 9500);
+    }, 4000);
   }
 
   render() {
     return (
       <div className="content">
         <NavBar theme={this.state.delayedTheme}/>
-        <Bio
-          terminalTheme={this.state.terminalTheme}
-          titleTheme={this.state.titleTheme}
-          subtitleTheme={this.state.subtitleTheme} 
-          blurbTheme={this.state.blurbTheme}
-          emailButtonTheme={this.state.delayedTheme}
-          writtenText={this.state.writtenText}
-          notDisplayedTheme={this.state.notDisplayedTheme}
-        />
+        <div className="main-content">
+          <Bio
+            terminalTheme={this.state.terminalTheme}
+            titleTheme={this.state.titleTheme}
+            subtitleTheme={this.state.subtitleTheme} 
+            blurbTheme={this.state.blurbTheme}
+            emailButtonTheme={this.state.delayedTheme}
+            writtenText={this.state.writtenText}
+            notDisplayedTheme={this.state.notDisplayedTheme}
+          />
 
-        <ProjectDisplays theme={this.state.notDisplayedTheme} />
-  
-        <ContactForm theme={this.state.notDisplayedTheme}/>
-  
-        <Footer theme={this.state.notDisplayedTheme}/>
+          <ProjectDisplays theme={this.state.notDisplayedTheme} />
+    
+          <ContactForm theme={this.state.notDisplayedTheme}/>
+    
+          <Footer theme={this.state.notDisplayedTheme}/>
+        </div>
       </div>
     )
   }
