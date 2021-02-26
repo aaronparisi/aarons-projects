@@ -31,9 +31,16 @@ class Content extends React.Component {
         visibility: 'hidden',
         opacity: 0
       },
-      typewriterText: "Hi, my name is",
+      terminalTheme: {
+        color: '#14a098',
+        transition: 'color 0s ease-out',
+        marginTop: 0
+      },
+      typewriterText: " Hi, my name is",
       writtenText: ""
     }
+
+    // todo i'm surprised it didn't yell at me for not binding functions...
   }
 
   componentDidMount() {
@@ -41,6 +48,7 @@ class Content extends React.Component {
       this.typeTextLoop(0)
       .then(
         msg => {
+          this.flashTerminal()
           this.titleTimeout()
           this.subtitleTimeout()
           this.blurbTimeout()
@@ -68,22 +76,48 @@ class Content extends React.Component {
     })
   }
 
+  flashTerminal() {
+    // change color to bright
+    setTimeout(() => {
+      let terminalTheme = {...this.state.terminalTheme}
+      terminalTheme.color = '#c5fffc'
+      terminalTheme.transition = 'color 0s ease-out'
+      // terminalTheme.marginTop = this.state.terminalTheme.marginTop - 33
+      let newWritten = this.state.writtenText + '\n>'
+      this.setState({writtenText: newWritten, terminalTheme})
+
+      setTimeout(() => {
+        // change back to dark
+        let terminalTheme = {...this.state.terminalTheme}
+        terminalTheme.color = '#14a098',
+        terminalTheme.transition = 'color 2s ease-out'
+        this.setState({terminalTheme})
+      }, 500);
+      // * this is ugly
+    }, 1500);
+  }
+  
   titleTimeout() {
     setTimeout(() => {
       let titleTheme = {...this.state.titleTheme}
       titleTheme.visibility = 'visible'
       titleTheme.opacity = 100
-      this.setState({titleTheme})
-    }, 1000);
+
+      // this.flashTerminal()
+      this.setState({titleTheme })
+    }, 1500);
   }
 
   subtitleTimeout() {
+
     setTimeout(() => {
       let subtitleTheme = {...this.state.subtitleTheme}
       subtitleTheme.visibility = 'visible'
       subtitleTheme.opacity = 100
+
+      // this.flashTerminal()
       this.setState({subtitleTheme})
-    }, 2500);
+    }, 3500);
   }
   
   blurbTimeout() {
@@ -92,7 +126,7 @@ class Content extends React.Component {
       blurbTheme.visibility = 'visible'
       blurbTheme.opacity = 100
       this.setState({blurbTheme})
-    }, 4000);
+    }, 5500);
   }
 
   linksTimeout() {
@@ -101,7 +135,7 @@ class Content extends React.Component {
       delayedTheme.visibility = 'visible'
       delayedTheme.opacity = 100
       this.setState({delayedTheme})
-    }, 8000);
+    }, 9500);
   }
 
   restTimeout() {
@@ -111,7 +145,7 @@ class Content extends React.Component {
       notDisplayedTheme.opacity = 100
       notDisplayedTheme.display = 'flex'
       this.setState({notDisplayedTheme})
-    }, 8000);
+    }, 9500);
   }
 
   render() {
@@ -119,6 +153,7 @@ class Content extends React.Component {
       <div className="content">
         <NavBar theme={this.state.delayedTheme}/>
         <Bio
+          terminalTheme={this.state.terminalTheme}
           titleTheme={this.state.titleTheme}
           subtitleTheme={this.state.subtitleTheme} 
           blurbTheme={this.state.blurbTheme}

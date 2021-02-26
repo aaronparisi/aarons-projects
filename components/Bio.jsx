@@ -5,13 +5,13 @@ import About from './About'
 const StyledH1 = styled.h1`
   opacity: ${props => props.theme.opacity}%;
   visibility: ${props => props.theme.visibility};
-  transition: opacity 1.5s ease-in-out;
+  transition: opacity 2s ease-in-out;
 `
 
 const StyledH2 = styled.h2`
   opacity: ${props => props.theme.opacity}%;
   visibility: ${props => props.theme.visibility};
-  transition: opacity 1.5s ease-in-out;
+  transition: opacity 1s ease-in-out;
 `
 
 const StyledP = styled.p`
@@ -25,16 +25,26 @@ const StyledButton = styled.button`
   visibility: ${props => props.theme.visibility};
   transition: opacity 1.5s ease-in-out;
 `
+const StyledH4 = styled.h4`
+  color: ${props => props.theme.color};
+  transition: ${props => props.theme.transition};
+  margin-top: ${props => props.theme.marginTop}px;
+`
+
 class Bio extends React.Component {
-  constructor({ titleTheme, subtitleTheme, blurbTheme, emailButtonTheme, writtenText }) {
-    super({ titleTheme, subtitleTheme, blurbTheme, emailButtonTheme, writtenText })
+  constructor({ terminalTheme, titleTheme, subtitleTheme, blurbTheme, emailButtonTheme, writtenText }) {
+    super({ terminalTheme, titleTheme, subtitleTheme, blurbTheme, emailButtonTheme, writtenText })
     // todo this doesn't need to be a class anymore?
   }
   
   render() {
     return (
       <div id="bio">
-        <h4 id="greeting"><span id="typewriter-text">{this.props.writtenText}</span><span id="blinking-cursor" className="blinked-on">&#9646;</span></h4>
+        <ThemeProvider theme={this.props.terminalTheme}>
+          <StyledH4 id="greeting">
+            <span id="typewriter-text">&#62;{this.props.writtenText}</span><span id="blinking-cursor" className="blinked-on">&#9646;</span>
+          </StyledH4>
+        </ThemeProvider>
   
         <ThemeProvider theme={this.props.titleTheme}>
           <StyledH1

@@ -151,12 +151,13 @@ nav {
     font-size: 48px;
     font-family: "Rajdhani"; }
   #bio h4 {
-    color: #14a098;
     font-family: 'Source Code Pro', monospace;
     font-size: 24px; }
   #bio #blurb {
     width: 50%;
     color: #dddddd; }
+  #bio #typewriter-text {
+    white-space: pre-wrap; }
   #bio #about::before {
     display: block;
     content: " ";
@@ -385,7 +386,7 @@ nav {
 #blinking-cursor {
   font-weight: 100;
   position: absolute;
-  top: -35px;
+  bottom: -30px;
   font-size: 70px;
   color: #14a098; }
 

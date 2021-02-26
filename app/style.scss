@@ -211,7 +211,7 @@ nav {
   }
 
   h4 {
-    color: $light-green;
+    // color: $light-green;
     font-family: 'Source Code Pro', monospace;
     font-size: 24px;
   }
@@ -219,6 +219,10 @@ nav {
   #blurb {
     width: 50%;
     color: $bright-white;
+  }
+
+  #typewriter-text {
+    white-space: pre-wrap;
   }
 
   // #pretty {
@@ -524,7 +528,7 @@ nav {
 #blinking-cursor {
   font-weight: 100;
   position: absolute;
-  top: -35px;
+  bottom: -30px;
   font-size: 70px;
   color: $light-green;
 }

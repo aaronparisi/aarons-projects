@@ -825,7 +825,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _About__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./About */ "./components/About.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-var _templateObject, _templateObject2, _templateObject3, _templateObject4;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -852,12 +852,12 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var StyledH1 = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.h1(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  opacity: ", "%;\n  visibility: ", ";\n  transition: opacity 1.5s ease-in-out;\n"])), function (props) {
+var StyledH1 = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.h1(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  opacity: ", "%;\n  visibility: ", ";\n  transition: opacity 2s ease-in-out;\n"])), function (props) {
   return props.theme.opacity;
 }, function (props) {
   return props.theme.visibility;
 });
-var StyledH2 = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.h2(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  opacity: ", "%;\n  visibility: ", ";\n  transition: opacity 1.5s ease-in-out;\n"])), function (props) {
+var StyledH2 = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.h2(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  opacity: ", "%;\n  visibility: ", ";\n  transition: opacity 1s ease-in-out;\n"])), function (props) {
   return props.theme.opacity;
 }, function (props) {
   return props.theme.visibility;
@@ -872,6 +872,13 @@ var StyledButton = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.button
 }, function (props) {
   return props.theme.visibility;
 });
+var StyledH4 = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.h4(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  color: ", ";\n  transition: ", ";\n  margin-top: ", "px;\n"])), function (props) {
+  return props.theme.color;
+}, function (props) {
+  return props.theme.transition;
+}, function (props) {
+  return props.theme.marginTop;
+});
 
 var Bio = /*#__PURE__*/function (_React$Component) {
   _inherits(Bio, _React$Component);
@@ -879,7 +886,8 @@ var Bio = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(Bio);
 
   function Bio(_ref) {
-    var titleTheme = _ref.titleTheme,
+    var terminalTheme = _ref.terminalTheme,
+        titleTheme = _ref.titleTheme,
         subtitleTheme = _ref.subtitleTheme,
         blurbTheme = _ref.blurbTheme,
         emailButtonTheme = _ref.emailButtonTheme,
@@ -888,6 +896,7 @@ var Bio = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, Bio);
 
     return _super.call(this, {
+      terminalTheme: terminalTheme,
       titleTheme: titleTheme,
       subtitleTheme: subtitleTheme,
       blurbTheme: blurbTheme,
@@ -901,14 +910,16 @@ var Bio = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         id: "bio"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(styled_components__WEBPACK_IMPORTED_MODULE_2__.ThemeProvider, {
+        theme: this.props.terminalTheme
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(StyledH4, {
         id: "greeting"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
         id: "typewriter-text"
-      }, this.props.writtenText), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+      }, ">", this.props.writtenText), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
         id: "blinking-cursor",
         className: "blinked-on"
-      }, "\u25AE")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(styled_components__WEBPACK_IMPORTED_MODULE_2__.ThemeProvider, {
+      }, "\u25AE"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(styled_components__WEBPACK_IMPORTED_MODULE_2__.ThemeProvider, {
         theme: this.props.titleTheme
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(StyledH1, null, "Aaron Parisi.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(styled_components__WEBPACK_IMPORTED_MODULE_2__.ThemeProvider, {
         theme: this.props.subtitleTheme
@@ -1482,9 +1493,15 @@ var Content = /*#__PURE__*/function (_React$Component) {
         visibility: 'hidden',
         opacity: 0
       },
-      typewriterText: "Hi, my name is",
+      terminalTheme: {
+        color: '#14a098',
+        transition: 'color 0s ease-out',
+        marginTop: 0
+      },
+      typewriterText: " Hi, my name is",
       writtenText: ""
-    };
+    }; // todo i'm surprised it didn't yell at me for not binding functions...
+
     return _this;
   }
 
@@ -1495,6 +1512,8 @@ var Content = /*#__PURE__*/function (_React$Component) {
 
       setTimeout(function () {
         _this2.typeTextLoop(0).then(function (msg) {
+          _this2.flashTerminal();
+
           _this2.titleTimeout();
 
           _this2.subtitleTimeout();
@@ -1531,85 +1550,116 @@ var Content = /*#__PURE__*/function (_React$Component) {
       });
     }
   }, {
-    key: "titleTimeout",
-    value: function titleTimeout() {
+    key: "flashTerminal",
+    value: function flashTerminal() {
       var _this4 = this;
 
+      // change color to bright
       setTimeout(function () {
-        var titleTheme = _objectSpread({}, _this4.state.titleTheme);
+        var terminalTheme = _objectSpread({}, _this4.state.terminalTheme);
 
-        titleTheme.visibility = 'visible';
-        titleTheme.opacity = 100;
+        terminalTheme.color = '#c5fffc';
+        terminalTheme.transition = 'color 0s ease-out'; // terminalTheme.marginTop = this.state.terminalTheme.marginTop - 33
+
+        var newWritten = _this4.state.writtenText + '\n>';
 
         _this4.setState({
+          writtenText: newWritten,
+          terminalTheme: terminalTheme
+        });
+
+        setTimeout(function () {
+          // change back to dark
+          var terminalTheme = _objectSpread({}, _this4.state.terminalTheme);
+
+          terminalTheme.color = '#14a098', terminalTheme.transition = 'color 2s ease-out';
+
+          _this4.setState({
+            terminalTheme: terminalTheme
+          });
+        }, 500); // * this is ugly
+      }, 1500);
+    }
+  }, {
+    key: "titleTimeout",
+    value: function titleTimeout() {
+      var _this5 = this;
+
+      setTimeout(function () {
+        var titleTheme = _objectSpread({}, _this5.state.titleTheme);
+
+        titleTheme.visibility = 'visible';
+        titleTheme.opacity = 100; // this.flashTerminal()
+
+        _this5.setState({
           titleTheme: titleTheme
         });
-      }, 1000);
+      }, 1500);
     }
   }, {
     key: "subtitleTimeout",
     value: function subtitleTimeout() {
-      var _this5 = this;
+      var _this6 = this;
 
       setTimeout(function () {
-        var subtitleTheme = _objectSpread({}, _this5.state.subtitleTheme);
+        var subtitleTheme = _objectSpread({}, _this6.state.subtitleTheme);
 
         subtitleTheme.visibility = 'visible';
-        subtitleTheme.opacity = 100;
+        subtitleTheme.opacity = 100; // this.flashTerminal()
 
-        _this5.setState({
+        _this6.setState({
           subtitleTheme: subtitleTheme
         });
-      }, 2500);
+      }, 3500);
     }
   }, {
     key: "blurbTimeout",
     value: function blurbTimeout() {
-      var _this6 = this;
+      var _this7 = this;
 
       setTimeout(function () {
-        var blurbTheme = _objectSpread({}, _this6.state.blurbTheme);
+        var blurbTheme = _objectSpread({}, _this7.state.blurbTheme);
 
         blurbTheme.visibility = 'visible';
         blurbTheme.opacity = 100;
 
-        _this6.setState({
+        _this7.setState({
           blurbTheme: blurbTheme
         });
-      }, 4000);
+      }, 5500);
     }
   }, {
     key: "linksTimeout",
     value: function linksTimeout() {
-      var _this7 = this;
+      var _this8 = this;
 
       setTimeout(function () {
-        var delayedTheme = _objectSpread({}, _this7.state.delayedTheme);
+        var delayedTheme = _objectSpread({}, _this8.state.delayedTheme);
 
         delayedTheme.visibility = 'visible';
         delayedTheme.opacity = 100;
 
-        _this7.setState({
+        _this8.setState({
           delayedTheme: delayedTheme
         });
-      }, 8000);
+      }, 9500);
     }
   }, {
     key: "restTimeout",
     value: function restTimeout() {
-      var _this8 = this;
+      var _this9 = this;
 
       setTimeout(function () {
-        var notDisplayedTheme = _objectSpread({}, _this8.state.notDisplayedTheme);
+        var notDisplayedTheme = _objectSpread({}, _this9.state.notDisplayedTheme);
 
         notDisplayedTheme.visibility = 'visible';
         notDisplayedTheme.opacity = 100;
         notDisplayedTheme.display = 'flex';
 
-        _this8.setState({
+        _this9.setState({
           notDisplayedTheme: notDisplayedTheme
         });
-      }, 8000);
+      }, 9500);
     }
   }, {
     key: "render",
@@ -1619,6 +1669,7 @@ var Content = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_NavBar__WEBPACK_IMPORTED_MODULE_1__.default, {
         theme: this.state.delayedTheme
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Bio__WEBPACK_IMPORTED_MODULE_2__.default, {
+        terminalTheme: this.state.terminalTheme,
         titleTheme: this.state.titleTheme,
         subtitleTheme: this.state.subtitleTheme,
         blurbTheme: this.state.blurbTheme,
