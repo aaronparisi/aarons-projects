@@ -64,7 +64,7 @@ class Bio extends React.Component {
           <StyledP
             id="blurb"
           >
-            I am a web developer based in Seattle, WA, with a passion for making wep applications that people actually look forward to using.
+            I am a web developer based in Seattle, WA, with a passion for making wep applications that even my parents could use.
           </StyledP>
         </ThemeProvider>
   

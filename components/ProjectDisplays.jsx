@@ -22,6 +22,22 @@ class ProjectDisplays extends React.Component {
           <div id="project-displays">
             <ProjectDisplay
               projTitle="Todos"
+              imageUrl="./thumbnails/marge.png"
+              pageUrl="http://www.springfield-bnb.aaronparisidev.com"
+              gitUrl="https://github.com/aaronparisi/Springfield-BnB-Frontend.git"
+              description="Duhhh duhh duh da-duhhhhh duh duh da-dun-nuh-nuh-nuhh..."
+              techs={["Rails", "React", "Redux", "Amazon S3 Storage", "Axios"]}
+            />
+            <ProjectDisplay
+              projTitle="Jeerkat Clock"
+              imageUrl="./thumbnails/jeerkat.png"
+              pageUrl="http://www.jeerkat-js.aaronparisidev.com"
+              gitUrl="https://github.com/aaronparisi/JS-Jeerkat-Clock"
+              description="Schedule your day with these vanilla JavaScript critters!"
+              techs={["JavaScript"]}
+            />
+            <ProjectDisplay
+              projTitle="Todos"
               imageUrl="./thumbnails/Todos.png"
               // pageUrl="https://aarons-todos.herokuapp.com/"
               pageUrl="http://www.todos.aaronparisidev.com"
