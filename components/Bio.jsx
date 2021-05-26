@@ -72,7 +72,8 @@ class Bio extends React.Component {
           <StyledButton
             className="email-button"
           >
-            <a href="mailto: parisi.aaron@gmail.com">Get in Touch</a>
+            {/* <a href="mailto: parisi.aaron@gmail.com">Get in Touch</a> */}
+            <a href="#contact-form">Get in Touch</a>
           </StyledButton>
         </ThemeProvider>
   

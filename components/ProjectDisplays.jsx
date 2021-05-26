@@ -21,12 +21,20 @@ class ProjectDisplays extends React.Component {
           <h1 id="projects-header">My Projects</h1>
           <div id="project-displays">
             <ProjectDisplay
-              projTitle="Todos"
+              projTitle="Springfield BnB"
               imageUrl="./thumbnails/marge.png"
               pageUrl="http://www.springfield-bnb.aaronparisidev.com"
               gitUrl="https://github.com/aaronparisi/Springfield-BnB-Frontend.git"
               description="Duhhh duhh duh da-duhhhhh duh duh da-dun-nuh-nuh-nuhh..."
               techs={["Rails", "React", "Redux", "Amazon S3 Storage", "Axios"]}
+            />
+            <ProjectDisplay
+              projTitle="Candie's Swingin' 70th"
+              imageUrl="./thumbnails/candie.png"
+              pageUrl="http://www.candies-70th.aaronparisidev.com/1"
+              gitUrl="https://github.com/aaronparisi/candies-70th-frontend"
+              description="My friend's mom is turning 70!  Check out the details in this Wix clone, featuring improvements to the navbar visibility &amp; animation, costume inspiration sliders, and overlay RSVP form.  P.S. Please do not attempt to attend the party..."
+              techs={["React"]}
             />
             <ProjectDisplay
               projTitle="Jeerkat Clock"
