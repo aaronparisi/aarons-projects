@@ -51,7 +51,7 @@ class Content extends React.Component {
 
   componentDidMount() {
     setTimeout(() => {
-      // this.linksTimeout()  // delete this line later
+      // this.restTimeout()  // delete this line after fixing contact form
       this.typeTextLoop(0)
       .then(
         msg => {
@@ -152,7 +152,7 @@ class Content extends React.Component {
       notDisplayedTheme.opacity = 100
       notDisplayedTheme.display = 'flex'
       this.setState({notDisplayedTheme})
-    }, 4000);
+    }, 4000);  // this should be 4000...
   }
 
   render() {

@@ -40,6 +40,17 @@ const ContactForm = ({ theme }) => {
   //   })
   // }
 
+  const handleInputBlur = e => {
+    e.preventDefault()
+
+    if (e.currentTarget.value === "") {
+      e.currentTarget.style=`border: 3px solid #cb2d6f;`
+      e.currentTarget.placeholder = `${e.currentTarget.name} is required`
+    } else {
+      e.currentTarget.style=``
+    }
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
 
@@ -81,28 +92,31 @@ const ContactForm = ({ theme }) => {
         >
           <input 
             type="text" 
-            name="fromName" 
-            id="fromName"
+            name="Name" 
+            id="Name"
             value={fromName}
             onChange={e => setFromName(e.currentTarget.value)}
-            placeholder="Your name"
+            onBlur={e => handleInputBlur(e)}
+            placeholder="Name"
           />
           <input 
             type="email" 
-            name="email" 
-            id="email"
+            name="Email" 
+            id="Email"
             value={email}
             onChange={e => setEmail(e.currentTarget.value)}
-            placeholder="Your email"
+            onBlur={e => handleInputBlur(e)}
+            placeholder="Email"
           />
           <textarea 
-            name="msgBody" 
-            id="msgBody" 
+            name="Message" 
+            id="Message" 
             cols="30" 
             rows="10"
             value={msgBody}
             onChange={e => setMsgBody(e.currentTarget.value)}
-            placeholder="Your message"
+            onBlur={e => handleInputBlur(e)}
+            placeholder="Say hi..."
           ></textarea>
           <button className="email-button" onClick={e => handleSubmit(e)} >Send Email!</button>
         </form>

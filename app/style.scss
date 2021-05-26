@@ -1,13 +1,17 @@
 $dark-green: #0f292f;
 $med-green: #13373f;
+$light-dull-green: #aae6e3;
+$dull-green: #81dad5;
 $light-green: #14a098;
 $bright-green: #13dfd4;
 
 $gray: #888888;
 $dull-white: #999999;
+$dullish-white: #afafaf;
 $white: #cccccc;
 $bright-white: #dddddd;
 
+$dull-pink: #d397b0;
 $pink: #cb2d6f;
 $purple: #723356;
 
@@ -614,14 +618,33 @@ nav {
     font-size: 24px;
 
     width: 100%;
-    padding: 10px;
+    padding: 20px;
     margin: 10px 0px;
 
     border-radius: 5px;
-  }
 
-  input[type="text"], input[type="email"] {
-    text-align: center;
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+    &::placeholder {
+      color: $dullish-white;
+    }
+
+    &:hover {
+      background-color: $light-dull-green;
+    }
+
+    &:focus {
+      background-color: $dull-green;
+      border: none;
+      outline: none;
+      box-shadow: none;
+
+      &::placeholder {
+        visibility: hidden;
+      }
+    }
   }
 
   button {

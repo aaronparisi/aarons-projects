@@ -1029,6 +1029,17 @@ var ContactForm = function ContactForm(_ref) {
   // }
 
 
+  var handleInputBlur = function handleInputBlur(e) {
+    e.preventDefault();
+
+    if (e.currentTarget.value === "") {
+      e.currentTarget.style = "border: 3px solid #cb2d6f;";
+      e.currentTarget.placeholder = "".concat(e.currentTarget.name, " is required");
+    } else {
+      e.currentTarget.style = "";
+    }
+  };
+
   var handleSubmit = function handleSubmit(e) {
     e.preventDefault();
     var templateId = 'template_auga2g4';
@@ -1061,32 +1072,41 @@ var ContactForm = function ContactForm(_ref) {
     id: "contact-form-form"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "text",
-    name: "fromName",
-    id: "fromName",
+    name: "Name",
+    id: "Name",
     value: fromName,
     onChange: function onChange(e) {
       return setFromName(e.currentTarget.value);
     },
-    placeholder: "Your name"
+    onBlur: function onBlur(e) {
+      return handleInputBlur(e);
+    },
+    placeholder: "Name"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "email",
-    name: "email",
-    id: "email",
+    name: "Email",
+    id: "Email",
     value: email,
     onChange: function onChange(e) {
       return setEmail(e.currentTarget.value);
     },
-    placeholder: "Your email"
+    onBlur: function onBlur(e) {
+      return handleInputBlur(e);
+    },
+    placeholder: "Email"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", {
-    name: "msgBody",
-    id: "msgBody",
+    name: "Message",
+    id: "Message",
     cols: "30",
     rows: "10",
     value: msgBody,
     onChange: function onChange(e) {
       return setMsgBody(e.currentTarget.value);
     },
-    placeholder: "Your message"
+    onBlur: function onBlur(e) {
+      return handleInputBlur(e);
+    },
+    placeholder: "Say hi..."
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     className: "email-button",
     onClick: function onClick(e) {
@@ -1632,7 +1652,7 @@ var Content = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       setTimeout(function () {
-        // this.linksTimeout()  // delete this line later
+        // this.restTimeout()  // delete this line after fixing contact form
         _this2.typeTextLoop(0).then(function (msg) {
           _this2.titleTimeout();
 
@@ -1780,7 +1800,7 @@ var Content = /*#__PURE__*/function (_React$Component) {
         _this9.setState({
           notDisplayedTheme: notDisplayedTheme
         });
-      }, 4000);
+      }, 4000); // this should be 4000...
     }
   }, {
     key: "render",

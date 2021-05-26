@@ -427,11 +427,23 @@ nav {
     font-family: "Source Code Pro";
     font-size: 24px;
     width: 100%;
-    padding: 10px;
+    padding: 20px;
     margin: 10px 0px;
-    border-radius: 5px; }
-  #contact-form-form input[type="text"], #contact-form-form input[type="email"] {
-    text-align: center; }
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none; }
+    #contact-form-form input[type="text"]::placeholder, #contact-form-form input[type="email"]::placeholder, #contact-form-form textarea::placeholder {
+      color: #afafaf; }
+    #contact-form-form input[type="text"]:hover, #contact-form-form input[type="email"]:hover, #contact-form-form textarea:hover {
+      background-color: #aae6e3; }
+    #contact-form-form input[type="text"]:focus, #contact-form-form input[type="email"]:focus, #contact-form-form textarea:focus {
+      background-color: #81dad5;
+      border: none;
+      outline: none;
+      box-shadow: none; }
+      #contact-form-form input[type="text"]:focus::placeholder, #contact-form-form input[type="email"]:focus::placeholder, #contact-form-form textarea:focus::placeholder {
+        visibility: hidden; }
   #contact-form-form button {
     color: #14a098;
     padding: 5px 10px; }
