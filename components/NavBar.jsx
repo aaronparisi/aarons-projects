@@ -9,6 +9,13 @@ const StyledNav = styled.nav`
   transition: opacity 1.5s ease-in-out;
 `
 
+const StyledNavBorder = styled.div`
+  opacity: ${props => props.theme.opacity}%;
+  visibility: ${props => props.theme.visibility};
+  width: ${(props => props.theme.width)};
+  transition: width 2s ease-in-out, opacity 1.5s ease-in-out;
+`
+
 class NavBar extends React.Component {
   constructor({ theme }) {
     super({ theme })
@@ -17,22 +24,26 @@ class NavBar extends React.Component {
   render() {
     return (
       <ThemeProvider theme={this.props.theme}>
-        <StyledNav>
-          <Logo />
-    
-          <div className="page-links">
-            <a href="#about">About.</a>
-            <a href="#projects-displays-container">Projects.</a>
-            <a href="#contact-form">Contact.</a>
-          </div>
-    
-          <div className="navlinks">
-            <a href="https://github.com/aaronparisi" target="_blank"><img className="navlink-icon link-icon" src="./icons/github.png" alt="github icon"/></a>
-            <a href="https://www.linkedin.com/in/aaron-parisi/" target="_blank"><img className="navlink-icon link-icon" src="./icons/linkedin.png" alt="linkedin icon"/></a>
-            <a href="mailto: parisi.aaron@gmail.com"><img className="navlink-icon link-icon" src="./icons/email.png" alt="email icon"/></a>
-            <a href="./pdfs/aaron_parisi_resume.pdf" target="_blank"><img className="navlink-icon link-icon" src="./icons/resume.png" alt="resume icon"/></a>
-          </div>
-        </StyledNav>
+        <div className="nav-container">
+          <StyledNav>
+            <Logo />
+      
+            <div className="page-links">
+              <a href="#about">About.</a>
+              <a href="#projects-displays-container">Projects.</a>
+              <a href="#contact-form">Contact.</a>
+            </div>
+      
+            <div className="navlinks">
+              <a href="https://github.com/aaronparisi" target="_blank"><img className="navlink-icon link-icon" src="./icons/github.png" alt="github icon"/></a>
+              <a href="https://www.linkedin.com/in/aaron-parisi/" target="_blank"><img className="navlink-icon link-icon" src="./icons/linkedin.png" alt="linkedin icon"/></a>
+              <a href="mailto: parisi.aaron@gmail.com"><img className="navlink-icon link-icon" src="./icons/email.png" alt="email icon"/></a>
+              <a href="./pdfs/aaron_parisi_resume.pdf" target="_blank"><img className="navlink-icon link-icon" src="./icons/resume.png" alt="resume icon"/></a>
+            </div>
+
+          </StyledNav>
+          <StyledNavBorder className="nav-border"></StyledNavBorder>
+        </div>
       </ThemeProvider>
     )
   }

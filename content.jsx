@@ -24,7 +24,8 @@ class Content extends React.Component {
       },
       delayedTheme: {
         visibility: 'hidden',
-        opacity: 0
+        opacity: 0,
+        width: '0%'
       },
       notDisplayedTheme: {
         display: 'none',
@@ -50,10 +51,10 @@ class Content extends React.Component {
 
   componentDidMount() {
     setTimeout(() => {
+      // this.linksTimeout()  // delete this line later
       this.typeTextLoop(0)
       .then(
         msg => {
-          // this.flashTerminal()
           this.titleTimeout()
           this.subtitleTimeout()
           this.blurbTimeout()
@@ -139,8 +140,9 @@ class Content extends React.Component {
       let delayedTheme = {...this.state.delayedTheme}
       delayedTheme.visibility = 'visible'
       delayedTheme.opacity = 100
+      delayedTheme.width = '100%'
       this.setState({delayedTheme})
-    }, 4000);
+    }, 4000);  // this should be 4000 when you're done developing the nav bar
   }
 
   restTimeout() {
