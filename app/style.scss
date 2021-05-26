@@ -11,7 +11,7 @@ $dullish-white: #afafaf;
 $white: #cccccc;
 $bright-white: #dddddd;
 
-$dull-pink: #d397b0;
+$dull-pink: #ca7297;
 $pink: #cb2d6f;
 $purple: #723356;
 
@@ -614,6 +614,8 @@ nav {
   margin-top: 15px;
 
   input[type="text"], input[type="email"], textarea {
+    box-sizing: border-box;
+
     font-family: $code-font;
     font-size: 24px;
 
@@ -636,7 +638,7 @@ nav {
     }
 
     &:focus {
-      background-color: $dull-green;
+      background-color: $dull-green !important;
       border: none;
       outline: none;
       box-shadow: none;
@@ -653,6 +655,12 @@ nav {
 
     &:hover {
       cursor: pointer;
+    }
+
+    &:disabled {
+      border-color: $gray;
+      color: $gray;
+      cursor: default;
     }
   }
 }

@@ -1005,7 +1005,12 @@ var ContactForm = function ContactForm(_ref) {
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
       _useState6 = _slicedToArray(_useState5, 2),
       fromName = _useState6[0],
-      setFromName = _useState6[1]; // const sendContactEmail = (from, subject, text) => {
+      setFromName = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+      _useState8 = _slicedToArray(_useState7, 2),
+      submitDisabled = _useState8[0],
+      setSubmitDisabled = _useState8[1]; // const sendContactEmail = (from, subject, text) => {
   //   const transporter = nodemailer.createTransport({
   //     service: 'gmail',
   //     auth: {
@@ -1033,10 +1038,14 @@ var ContactForm = function ContactForm(_ref) {
     e.preventDefault();
 
     if (e.currentTarget.value === "") {
-      e.currentTarget.style = "border: 3px solid #cb2d6f;";
+      e.currentTarget.style = "background-color: #ca7297;";
       e.currentTarget.placeholder = "".concat(e.currentTarget.name, " is required");
     } else {
       e.currentTarget.style = "";
+
+      if (email !== "" && fromName !== "" && msgBody !== "") {
+        setSubmitDisabled(false);
+      }
     }
   };
 
@@ -1111,7 +1120,8 @@ var ContactForm = function ContactForm(_ref) {
     className: "email-button",
     onClick: function onClick(e) {
       return handleSubmit(e);
-    }
+    },
+    disabled: submitDisabled
   }, "Send Email!"))));
 };
 

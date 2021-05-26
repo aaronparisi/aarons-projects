@@ -15,6 +15,7 @@ const ContactForm = ({ theme }) => {
   const [email, setEmail] = useState("")
   const [msgBody, setMsgBody] = useState("")
   const [fromName, setFromName] = useState("")
+  const [submitDisabled, setSubmitDisabled] = useState(true)
   // const sendContactEmail = (from, subject, text) => {
   //   const transporter = nodemailer.createTransport({
   //     service: 'gmail',
@@ -44,10 +45,14 @@ const ContactForm = ({ theme }) => {
     e.preventDefault()
 
     if (e.currentTarget.value === "") {
-      e.currentTarget.style=`border: 3px solid #cb2d6f;`
+      e.currentTarget.style=`background-color: #ca7297;`
       e.currentTarget.placeholder = `${e.currentTarget.name} is required`
     } else {
       e.currentTarget.style=``
+
+      if (email !== "" && fromName !== "" && msgBody !== "") {
+        setSubmitDisabled(false)
+      }
     }
   }
 
@@ -118,7 +123,13 @@ const ContactForm = ({ theme }) => {
             onBlur={e => handleInputBlur(e)}
             placeholder="Say hi..."
           ></textarea>
-          <button className="email-button" onClick={e => handleSubmit(e)} >Send Email!</button>
+          <button 
+            className="email-button" 
+            onClick={e => handleSubmit(e)} 
+            disabled={submitDisabled}
+          >
+            Send Email!
+          </button>
         </form>
       </StyledDiv>
     </ThemeProvider>
